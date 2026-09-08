@@ -69,10 +69,14 @@ def main():
     with sync_playwright() as p:
         browser = p.chromium.launch(executable_path=CHROME, args=["--hide-scrollbars"])
         for label, reduced in (("normal", None), ("reduced-motion", "reduce")):
-            errors = []
+            errors, cdn = [], []
             violations = []
             page = browser.new_page(viewport={"width": 1100, "height": 950}, reduced_motion=reduced)
             page.on("pageerror", lambda e: errors.append(str(e)))
+            # ספריות ה-OCR מגיעות מ-CDN חיצוני. בלי לדעת מה קרה לבקשה אי אפשר
+            # להבדיל בין חסימת רשת, 404, וסקריפט שנטען ונכשל בזמן ריצה.
+            page.on("response", lambda r: cdn.append((r.url.split("/")[-1], r.status)) if "cdn.jsdelivr.net" in r.url else None)
+            page.on("requestfailed", lambda r: cdn.append((r.url.split("/")[-1], "FAILED " + str(r.failure))) if "cdn.jsdelivr.net" in r.url else None)
             # CSP חוסם בשקט: הפרה מופיעה רק בקונסולה, ולכן היא נאספת בנפרד
             page.on("console", lambda m: violations.append(m.text[:160])
                     if "Content Security Policy" in m.text else None)
@@ -139,6 +143,7 @@ def main():
                 libs = page.evaluate("()=>({pdf:typeof window.pdfjsLib,tess:typeof window.Tesseract})")
                 loaded = [k for k, v in libs.items() if v != "undefined"]
                 notes.append(f"  · OCR libraries reachable here: {loaded or 'none (CDN unreachable)'}")
+                notes.append(f"  · CDN requests: {cdn or 'none'}")
 
                 cfg = page.evaluate("()=>({ref:DRIVECHECK_SUPABASE_REF,ready:googleVisionReady()})")
                 if not cfg["ready"]:
