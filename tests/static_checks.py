@@ -95,15 +95,28 @@ def check_no_hardcoded_origins():
 
 
 def check_no_personal_data():
-    """המידע האישי הוסר במכוון; אסור שיחזור דרך עריכה עתידית."""
+    """המידע האישי הוסר במכוון; אסור שיחזור דרך עריכה עתידית.
+
+    הבדיקה סורקת כל קובץ במעקב, לא רק את index.html. היא נכתבה בגרסה מצומצמת
+    יותר ופספסה 18 עותקים ישנים של הדף שהמשיכו להגיש את השם מ-GitHub Pages."""
     banned = ["עמוס רוקח", "buytest2026@gmail.com", "amirok196888", "197356"]
-    src = INDEX.read_text(encoding="utf-8")
-    fn_text = "\n".join(p.read_text(encoding="utf-8") for p in FUNCTIONS.glob("*/index.ts"))
-    hits = [b for b in banned if b in src or b in fn_text]
+    tracked = subprocess.run(["git", "ls-files"], cwd=ROOT, capture_output=True, text=True).stdout.split()
+    hits = []
+    for rel in tracked:
+        if rel == "tests/static_checks.py":       # הקובץ הזה מחזיק את הרשימה עצמה
+            continue
+        f = ROOT / rel
+        if not f.is_file() or f.suffix.lower() in {".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".pdf"}:
+            continue
+        try:
+            text = f.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        hits += [f"{rel}: {b}" for b in banned if b in text]
     if hits:
-        fail("no-personal-data", f"reintroduced: {', '.join(hits)}")
+        fail("no-personal-data", "; ".join(hits[:6]))
     else:
-        ok("no-personal-data", "no personal or third-party identifiers")
+        ok("no-personal-data", f"no personal or third-party identifiers in {len(tracked)} tracked files")
 
 
 def check_ocr_libs_deferred():

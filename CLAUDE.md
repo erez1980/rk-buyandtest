@@ -75,6 +75,22 @@ shellcheck supabase/deploy.sh
 - סודות יושבים ב־`buytest_private_config` או בסודות הפרויקט. **אף פעם בקוד.**
 - `supabase/deploy.sh` מדפלייט ומגדיר סודות; `deploy.sh verify` בודק מוכנות.
 
+## מה סוכן בסביבה הזו לא יכול לעשות
+
+נבדק פעם אחת כל אחד, לא הונח. אל תנסה שוב — תבקש מהמשתמש.
+
+| משימה | ההגבלה |
+|---|---|
+| ביטול/יצירת מפתח Google Vision | אין מחבר Google Cloud. הכלים של גוגל כאן הם Drive ו־Gmail — Workspace, לא GCP |
+| הגדרת סודות ב־Supabase | ה־MCP חושף פרויקט, מסד ו־Edge Functions — אין כלי לסודות. נדרש `supabase secrets set` עם טוקן |
+| פריסת `buytest-analyze` | 513KB, הרבה מעבר למה שנכנס בקריאת כלי. חייב CLI |
+| הדלקת secret scanning / branch protection | אין ל־MCP של GitHub כלי להגדרות ריפו. `run_secret_scanning` קיים אך דורש Advanced Security, שכבוי כאן |
+| בדיקת OCR מקצה לקצה | פרוקסי היציאה חוסם את `cdn.jsdelivr.net`, ולכן אף ספרייה לא נטענת כאן. ב־CI כן — ולכן `browser_checks.py` מדפיס אילו ספריות נטענו |
+
+**פריסה חלקית של פונקציות דרך ה־MCP נשקלה ונדחתה:** `deploy.sh` מדפלייט את
+כל החמש בפקודה אחת, כך שזה לא היה חוסך שלב — רק מכניס סיכון של פונקציית
+תשלום שהועתקה ביד.
+
 ## כללים
 
 - **אל תמזג את PR #1** ואל תפעיל תשלומי Cardcom בלי אישור מפורש.
