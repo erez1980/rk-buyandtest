@@ -16,11 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          fetch-depth: 0          # סריקת הסודות עוברת על כל הקבצים במעקב
+          fetch-depth: 0          # נדרש להיסטוריה המלאה בסריקת הסודות
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: python3 tests/static_checks.py
+      # fetch-depth: 0 למעלה נדרש כאן: הסריקה עוברת על כל האובייקטים בכל הרפרנסים
+      - run: python3 tests/history_scan.py
 
   browser:
     name: Browser checks

@@ -1,0 +1,30 @@
+{
+  "acknowledged": [
+    {
+      "sha256": "c56f67735a7e72bcf8e38c688fd36c50fb4c8497642efc9598ffcec929a353fe",
+      "prefix": "AIzaSyDWVj…",
+      "kind": "google-api-key",
+      "first_seen_commits": [
+        "62a8ca2",
+        "08a4163",
+        "305dc08",
+        "49fcfdd"
+      ],
+      "in_head": false,
+      "status": "pending-rotation",
+      "note": "נחשף בהיסטוריה של ריפו ציבורי. הוסר מ-HEAD אך עדיין ניתן לשליפה. חייב ביטול ב-Google Cloud."
+    },
+    {
+      "sha256": "dceddb4bd954736d082dda60efaaf666cf14db7a15dc0e66376f0e381a00ac8d",
+      "prefix": "AIzaSyC7sY…",
+      "kind": "google-api-key",
+      "first_seen_commits": [
+        "adea2ad",
+        "fb91782"
+      ],
+      "in_head": false,
+      "status": "pending-rotation",
+      "note": "נחשף בהיסטוריה של ריפו ציבורי. הוסר מ-HEAD אך עדיין ניתן לשליפה. חייב ביטול ב-Google Cloud."
+    }
+  ]
+}
