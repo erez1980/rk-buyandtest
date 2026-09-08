@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: ["**"]
+    branches: [main]      # ענפי PR נבדקים דרך pull_request; "**" הריץ הכול פעמיים
   pull_request:
   workflow_dispatch:
 
@@ -14,7 +14,7 @@ jobs:
     name: Static checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0          # סריקת הסודות עוברת על כל הקבצים במעקב
       - uses: actions/setup-python@v5
@@ -26,7 +26,7 @@ jobs:
     name: Browser checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -38,18 +38,15 @@ jobs:
     name: Shell scripts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: sudo apt-get update && sudo apt-get install -y shellcheck
       - run: shellcheck supabase/deploy.sh
 
   edge-functions:
     name: Edge function type check
     runs-on: ubuntu-latest
-    # מייעץ ולא חוסם: לא ניתן היה להריץ deno בסביבה שבה נכתב ה-workflow,
-    # ולכן הוא לא אומת. אחרי ריצה ירוקה ראשונה אפשר להסיר את השורה הזו.
-    continue-on-error: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
