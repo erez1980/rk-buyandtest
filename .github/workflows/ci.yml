@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]      # ענפי PR נבדקים דרך pull_request; "**" הריץ הכול פעמיים
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    name: Static checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0          # נדרש להיסטוריה המלאה בסריקת הסודות
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 tests/static_checks.py
+      # fetch-depth: 0 למעלה נדרש כאן: הסריקה עוברת על כל האובייקטים בכל הרפרנסים
+      - run: python3 tests/history_scan.py
+
+  browser:
+    name: Browser checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet playwright
+      - run: python3 -m playwright install --with-deps chromium
+      - run: python3 tests/browser_checks.py
+
+  shell:
+    name: Shell scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - run: shellcheck supabase/deploy.sh
+
+  edge-functions:
+    name: Edge function type check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: deno check
+        run: |
+          # buytest-analyze נשאר מחוץ לבדיקה: הוא נכתב כקובץ יחיד ומוקטן
+          # ו-deno check עליו מייצר רעש שאינו מעיד על תקלה אמיתית.
+          for fn in vision-ocr buytest-payment buytest-payment-webhook buytest-cardcom-setup; do
+            echo "▸ $fn"
+            deno check "supabase/functions/$fn/index.ts"
+          done

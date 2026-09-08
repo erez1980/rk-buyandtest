@@ -1,16 +1,17 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
-const ALLOWED_ORIGIN = "https://amirok196888-cloud.github.io";
-const SITE_URL = `${ALLOWED_ORIGIN}/buytest/`;
-const WEBHOOK_URL = "https://tjxjxavxrmvbofvtnsaj.supabase.co/functions/v1/buytest-payment-webhook";
+// ה-origin של האתר וכתובת ה-Webhook נקבעים בסודות הפרויקט, לא בקוד.
+// supabase secrets set SITE_ORIGIN=https://<הדומיין-שלך>
+const ALLOWED_ORIGIN = Deno.env.get("SITE_ORIGIN") || "";
+const SITE_URL = Deno.env.get("SITE_URL") || `${ALLOWED_ORIGIN}/`;
+const WEBHOOK_URL = `${Deno.env.get("SUPABASE_URL") || ""}/functions/v1/buytest-payment-webhook`;
 const CARDCOM_API_URL = "https://secure.cardcom.solutions/api/v11";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "";
 const SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 const PLANS = {
   premium: { amountAgorot: 4900, title: "בדיקה עצמית לפני המכון", scopes: ["premium"] },
   report: { amountAgorot: 3900, title: "פענוח אחרי המכון", scopes: ["premium", "report"] },
-  consultation: { amountAgorot: 4900, title: "התייעצות אישית", scopes: ["premium", "report", "consultation"] },
-  bundle: { amountAgorot: 12000, title: "חבילת BuyTest המלאה", scopes: ["premium", "report", "consultation"] },
+  bundle: { amountAgorot: 7900, title: "חבילת DriveCheck המלאה", scopes: ["premium", "report"] },
 } as const;
 type PlanKey = keyof typeof PLANS;
 type CardcomConfig = { terminalNumber: number; apiName: string; enabled: boolean };
@@ -206,7 +207,7 @@ async function signedEntitlement(order: Record<string, unknown>) {
   const plan = String(order.plan) as PlanKey;
   const progress = stageProgress(order.provider_payload);
   const scopes = plan === "bundle"
-    ? ["premium", ...(progress.preInspectionCompleted ? ["report"] : []), ...(progress.reportCompleted ? ["consultation"] : [])]
+    ? ["premium", ...(progress.preInspectionCompleted ? ["report"] : [])]
     : [...PLANS[plan].scopes];
   const payload = base64Url(new TextEncoder().encode(JSON.stringify({
     v: 1, oid: order.id, plate: order.plate, plan, scopes,
@@ -241,7 +242,7 @@ async function createPayment(origin: string | null, body: Record<string, unknown
   const plan = PLANS[planKey];
   let inheritedProgress: StageProgress = { preInspectionCompleted: false, reportCompleted: false };
   let priorOrderId = "";
-  if (planKey === "report" || planKey === "consultation") {
+  if (planKey === "report") {
     const priorOrder = await verifiedPriorOrder(body, plate);
     if (!priorOrder || !isPlan(priorOrder.plan)) return json(origin, { ok: false, error: "previous_stage_required" }, 409);
     const priorProgress = stageProgress(priorOrder.provider_payload);

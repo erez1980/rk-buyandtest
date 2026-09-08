@@ -1,0 +1,19 @@
+# סודות — לעולם לא בריפו. הסודות חיים ב-Supabase secrets ובכספת שבמסד.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+service-account*.json
+
+# כלים מקומיים
+.supabase/
+node_modules/
+__pycache__/
+.pytest_cache/
+.DS_Store
+
+# פלט בדיקות
+tests/__pycache__/
+tests/*.png
