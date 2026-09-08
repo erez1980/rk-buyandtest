@@ -134,6 +134,12 @@ def main():
                 if not page.evaluate("()=>document.getElementById('paymentOverlay').hidden"):
                     page.evaluate("()=>closeBuyTestPayment()")
 
+                # מדווח בלבד: ה-CDN חסום בחלק מסביבות הפיתוח, ולכן זו לא כשלון.
+                # ב-CI, שבו יש גישה, השורה הזו היא הראיה שהספריות נטענות אחרי defer.
+                libs = page.evaluate("()=>({pdf:typeof window.pdfjsLib,tess:typeof window.Tesseract})")
+                loaded = [k for k, v in libs.items() if v != "undefined"]
+                notes.append(f"  · OCR libraries reachable here: {loaded or 'none (CDN unreachable)'}")
+
                 cfg = page.evaluate("()=>({ref:DRIVECHECK_SUPABASE_REF,ready:googleVisionReady()})")
                 if not cfg["ready"]:
                     fail("config", "googleVisionReady() is false — endpoint or key malformed")

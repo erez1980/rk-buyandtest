@@ -106,6 +106,24 @@ def check_no_personal_data():
         ok("no-personal-data", "no personal or third-party identifiers")
 
 
+def check_ocr_libs_deferred():
+    """שתי ספריות ה-OCR חסמו את הפרסור בכל טעינת דף עד שנוספה להן defer.
+    הבדיקה גם נועלת את הגרסאות: CDN ללא גרסה מוצמדת הוא שינוי קוד שקט בפרודקשן."""
+    src = INDEX.read_text(encoding="utf-8")
+    expected = {"pdfjs-dist@3.11.174": "pdf.min.js", "tesseract.js@7.0.0": "tesseract.min.js"}
+    problems = []
+    for pin, filename in expected.items():
+        tag = re.search(r"<script([^>]*)\bsrc=\"[^\"]*" + re.escape(pin) + r"[^\"]*" + re.escape(filename) + r"\"", src)
+        if not tag:
+            problems.append(f"{filename} חסרה או שהגרסה אינה {pin}")
+        elif "defer" not in tag.group(1):
+            problems.append(f"{filename} נטענת ללא defer וחוסמת את הפרסור")
+    if problems:
+        fail("ocr-libs", "; ".join(problems))
+    else:
+        ok("ocr-libs", "both OCR libraries deferred and version-pinned")
+
+
 def check_reduced_motion():
     """כל האפקטים חייבים להיכבות תחת prefers-reduced-motion."""
     src = INDEX.read_text(encoding="utf-8")
@@ -115,7 +133,8 @@ def check_reduced_motion():
 
 
 for fn in (check_no_secrets, check_anon_key_only, check_prices_match,
-           check_no_hardcoded_origins, check_no_personal_data, check_reduced_motion):
+           check_no_hardcoded_origins, check_no_personal_data,
+           check_ocr_libs_deferred, check_reduced_motion):
     try:
         fn()
     except Exception as exc:                     # בדיקה שנשברת היא כישלון, לא דילוג
