@@ -29,6 +29,8 @@
 | `assets/drivecheck-logo-print.png` | לוגו כהה־על־בהיר, משמש בתוך ה־PDF שנוצר ללקוח |
 | `share-v3.html` | דף הפניה לשיתוף |
 | `supabase/functions/` | Edge Functions: OCR, ניתוח, תשלום (Cardcom) |
+| `supabase/migrations/` | סכימת הבסיס — טבלאות, RPC ו־RLS |
+| `supabase/README.md` | מדריך הרמה על תשתית משלך |
 
 ## שפת העיצוב
 
@@ -82,8 +84,11 @@ python3 -m http.server 8080
    במעבר לדומיין ייעודי: להחליף שם את הבסיס ולהוסיף קובץ `CNAME` בשורש.
 2. **תיבת דואר** — כתובת הקשר `support@drivecheck.co.il` מופיעה במדיניות הפרטיות
    ובמדיניות הביטול. יש להפנות אותה לתיבה פעילה לפני שמפרסמים.
-3. **RLS ב־Supabase** — מפתח ה־anon חשוף בקוד המקור (כך זה אמור להיות), ולכן
-   ההגנה היחידה על הנתונים היא Row Level Security. לוודא שהוא מופעל.
+3. **תשתית** — הפרויקט מדבר עם פרויקט Supabase אחד, שמוגדר בשני קבועים בראש
+   ה־script ב־`index.html`. להרמה על תשתית משלך, כולל סכימה, סודות, מפתח
+   Google Vision וחיבור Cardcom: **[`supabase/README.md`](supabase/README.md)**.
+   מפתח ה־anon חשוף בקוד המקור (כך זה אמור להיות), ולכן ההגנה על הנתונים היא
+   RLS יחד עם העובדה שכל גישה עוברת דרך Edge Functions.
 
 ## הערות
 

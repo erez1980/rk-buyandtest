@@ -1136,12 +1136,25 @@ let latestSummaryResult=null,latestComputerResult=null,latestComputerIdentity=nu
 let externalVehicleData={kmHistory:[]};
 const inspectionFiles={summary:null,computer:[]};
 const inspectionOcrMeta={summary:null,computer:null};
-// Google Vision runs through the DriveCheck Supabase Edge Function so the private
-// Google API key is never exposed in the public GitHub Pages source.
-const GOOGLE_VISION_PROXY_ENDPOINT='https://tjxjxavxrmvbofvtnsaj.supabase.co/functions/v1/vision-ocr';
+/* ==========================================================================
+   DriveCheck · חיבור לשרת — שני הערכים היחידים שצריך להחליף
+   ------------------------------------------------------------------
+   כדי להריץ את הפרויקט על פרויקט Supabase משלך:
+     1. יוצרים פרויקט ב-supabase.com
+     2. מריצים supabase/migrations/0001_drivecheck_core.sql
+     3. מדפלייטים את הפונקציות מ-supabase/functions/
+     4. מחליפים כאן את ה-ref ואת מפתח ה-anon
+   ההוראות המלאות: supabase/README.md
+   מפתח ה-anon אמור להיות פומבי; ההגנה על הנתונים היא RLS + ה-Edge Functions.
+   ========================================================================== */
+const DRIVECHECK_SUPABASE_REF='tjxjxavxrmvbofvtnsaj';
 const BUYTEST_SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqeGp4YXZ4cm12Ym9mdnRuc2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMjk3NjMsImV4cCI6MjEwMzkwNTc2M30.AWPEga4E1CQQ9QqqMyw1gTJn__aqV_fCx_raQhGjMck';
-const BUYTEST_PAYMENT_ENDPOINT='https://tjxjxavxrmvbofvtnsaj.supabase.co/functions/v1/buytest-payment';
-const BUYTEST_ANALYZE_ENDPOINT='https://tjxjxavxrmvbofvtnsaj.supabase.co/functions/v1/buytest-analyze';
+
+const DRIVECHECK_FUNCTIONS_URL=`https://${DRIVECHECK_SUPABASE_REF}.supabase.co/functions/v1`;
+// Google Vision רץ דרך Edge Function כדי שהמפתח הפרטי לא ייחשף בקוד המקור.
+const GOOGLE_VISION_PROXY_ENDPOINT=`${DRIVECHECK_FUNCTIONS_URL}/vision-ocr`;
+const BUYTEST_PAYMENT_ENDPOINT=`${DRIVECHECK_FUNCTIONS_URL}/buytest-payment`;
+const BUYTEST_ANALYZE_ENDPOINT=`${DRIVECHECK_FUNCTIONS_URL}/buytest-analyze`;
 const BUYTEST_PAYMENT_STORAGE_KEY='buytestPaymentAccessV1';
 const BUYTEST_PAYMENT_RETURN_KEY='buytestPaymentReturnPendingV1';
 const BUYTEST_RECENT_PAYMENT_WINDOW_MS=30*60*1000;
