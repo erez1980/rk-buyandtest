@@ -3,18 +3,23 @@
 הפרונטאנד הוא קובץ HTML סטטי אחד. כל השאר — הזמנות, תשלומים, OCR ופענוח —
 רץ על פרויקט Supabase אחד. המדריך הזה מרים אותו מאפס.
 
-## 1. פרויקט Supabase
+## הפרויקט הפעיל
 
-צור פרויקט חדש ב־[supabase.com](https://supabase.com). מהעמוד Settings → API
-קח שני ערכים:
-
-| ערך | לאן |
+| | |
 |---|---|
-| Project ref (`abcdefgh…`) | `DRIVECHECK_SUPABASE_REF` ב־`index.html` |
-| `anon` public key | `BUYTEST_SUPABASE_ANON_KEY` ב־`index.html` |
+| Project ref | `jggosolvobyfvablywzi` |
+| אזור | `eu-central-1` |
+| ארגון | Erez Barazani |
+| Dashboard | https://supabase.com/dashboard/project/jggosolvobyfvablywzi |
 
+ה־ref ומפתח ה־`anon` כבר מוגדרים ב־`index.html`, בבלוק המסומן בראש ה־script.
 מפתח ה־`anon` **אמור** להיות גלוי בקוד המקור — כך הוא מתוכנן. מה שמגן על
 הנתונים הוא RLS יחד עם העובדה שכל גישה עוברת דרך Edge Functions.
+
+## 1. פרויקט חדש (רק אם מרימים מאפס)
+
+צור פרויקט ב־[supabase.com](https://supabase.com), ומ־Settings → API העתק את
+ה־Project ref ואת מפתח ה־`anon` אל הבלוק ב־`index.html`.
 
 ## 2. סכימה
 
@@ -55,12 +60,14 @@ Create credentials → API key. כדאי להגביל אותו ל־Cloud Vision 
 ## 4. פונקציות
 
 ```bash
-supabase functions deploy vision-ocr
-supabase functions deploy buytest-analyze
-supabase functions deploy buytest-payment
-supabase functions deploy buytest-payment-webhook
-supabase functions deploy buytest-cardcom-setup
+export SUPABASE_ACCESS_TOKEN=sbp_...     # supabase.com/dashboard/account/tokens
+export GOOGLE_VISION_API_KEY=AIza...     # אופציונלי
+./supabase/deploy.sh                     # סודות + כל חמש הפונקציות
 ```
+
+הסקריפט מדפלייט את `vision-ocr`, `buytest-analyze` ו־`buytest-payment` עם
+אימות JWT, ואת `buytest-payment-webhook` ו־`buytest-cardcom-setup` בלעדיו —
+הראשון נקרא על ידי Cardcom והשני נפתח ישירות בדפדפן, ולשניהם אין JWT.
 
 | פונקציה | תפקיד |
 |---|---|
