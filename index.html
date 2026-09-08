@@ -1318,7 +1318,10 @@ async function loadVehicle(){
 }
 const seller=['כמה זמן הרכב אצל המוכר?','האם היו תאונות או תיקונים משמעותיים?','האם המוכר מתחייב בבדיקה לגבי מנוע, גיר, שלדה ותאונות משמעותיות?'];
 const external=['בדוק אם קיימים הבדלי גוון בצבע בין חלקי המרכב','בדוק אם קיימים סימני פתיחה או פירוק בברגי מכסה המנוע ומכסה תא המטען','בדוק אם קיימים סימני פתיחה או פירוק בברגי הדלתות והכנפיים הקדמיות'];
-const self=['מצב הצמיגים תקין ומידותיהם תואמות למידות הרשומות ברישיון הרכב','קיים גלגל רזרבי תקין או ערכת תיקון/ניפוח בהתאם לציוד הרכב','לא נשארו נורות אזהרה חריגות לאחר התנעה','המזגן פועל ומקרר','חלונות, מראות וציוד חשמלי בסיסי פועלים','הבלאי בתא הנוסעים נראה סביר ביחס לק״מ','בהעברה ל־D ול־R אין מכה או רעש חריג','בוצעה נסיעת מבחן קצרה ולא נשמעו רעשים, נקישות או רעידות חריגות','אין עשן או נזילה בולטים לעין','מצב שמן המנוע אינו מציג סימן ברור לבוצה חריגה'];
+/* השם הזה היה 'self' והסתיר את הגלובל self של הדפדפן. עוטף UMD שנקרא
+   כ-}(self,factory) — כמו זה של tesseract.js — צירף את עצמו למערך הזה
+   במקום ל-window, ו-window.Tesseract נשאר undefined. */
+const selfInspectionChecks=['מצב הצמיגים תקין ומידותיהם תואמות למידות הרשומות ברישיון הרכב','קיים גלגל רזרבי תקין או ערכת תיקון/ניפוח בהתאם לציוד הרכב','לא נשארו נורות אזהרה חריגות לאחר התנעה','המזגן פועל ומקרר','חלונות, מראות וציוד חשמלי בסיסי פועלים','הבלאי בתא הנוסעים נראה סביר ביחס לק״מ','בהעברה ל־D ול־R אין מכה או רעש חריג','בוצעה נסיעת מבחן קצרה ולא נשמעו רעשים, נקישות או רעידות חריגות','אין עשן או נזילה בולטים לעין','מצב שמן המנוע אינו מציג סימן ברור לבוצה חריגה'];
 function makeChecks(arr,start,mode='visual'){
   const labels=mode==='seller'?['התשובה ברורה','צריך לברר','לא שאלתי']:['לא ראיתי בעיה','ראיתי משהו חריג','לא בדקתי'];
   return `<div class="guidedChecks" data-current="0">${arr.map((t,i)=>`<div class="check${i===0?' active':''}" data-index="${i}"><div class="questionCount">שאלה ${i+1} מתוך ${arr.length}</div><input type="checkbox" class="done" hidden><b class="checkTitle">${t}</b><div class="quickChoices"><button class="quickChoice" type="button" onclick="setCheckState(this,'ok')">${labels[0]}</button><button class="quickChoice issue" type="button" onclick="setCheckState(this,'issue')">${labels[1]}</button><button class="quickChoice skip" type="button" onclick="setCheckState(this,'skip')">${labels[2]}</button></div><div class="finding simpleFinding"><textarea placeholder="כתוב בקצרה מה דורש בירור"></textarea></div></div>`).join('')}<div class="guidedNav"><button type="button" onclick="moveGuided(this,-1)">הקודם</button><span class="guidedProgress">1 מתוך ${arr.length}</span><button type="button" onclick="moveGuided(this,1)">הבא</button></div></div>`;
@@ -1344,7 +1347,7 @@ function setCheckState(button,state){
 }
 document.getElementById('sellerChecks').innerHTML=makeChecks(seller,10,'seller');
 document.getElementById('externalChecks').innerHTML=makeChecks(external,20);
-document.getElementById('selfChecks').innerHTML=makeChecks(self,30);
+document.getElementById('selfChecks').innerHTML=makeChecks(selfInspectionChecks,30);
 document.querySelectorAll('.guidedChecks').forEach(renderGuided);
 
 

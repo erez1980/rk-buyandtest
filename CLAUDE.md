@@ -43,6 +43,10 @@ shellcheck supabase/deploy.sh
 
 - **ספציפיות CSS:** סלקטור כמו `.mktFinal .mktBtnPrimary` (0,2,0) מנצח את
   `.mktBtnPrimary` (0,1,0) שבשכבה 3, גם אם הוא מוקדם יותר בקובץ.
+- **`const self` הסתיר את הגלובל `self` של הדפדפן.** עוטף UMD שנקרא כ־`}(self,factory)`
+  צירף את הספרייה למערך של הדף במקום ל־`window`, ו־`window.Tesseract` נשאר undefined —
+  OCR מת בלי שגיאה אחת. אל תקרא למשתנה גלובלי בשם של גלובל דפדפן;
+  `tests/browser_checks.py` אוכף את זה.
 - **`.mktStep span` תפס את גלגלת האודומטר** שבתוך `.mktStepPrice` והפך אותה
   ל־`display:block`. סלקטורים בשכבה 3 חייבים להיות מצומצמים לצומת שהתכוונת אליו.
 - **פלט הדוח נוצר ב־JS**, לא קיים ב־HTML הסטטי. כדי לראות אותו צריך להזריק

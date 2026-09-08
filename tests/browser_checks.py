@@ -145,6 +145,18 @@ def main():
                 notes.append(f"  · OCR libraries reachable here: {loaded or 'none (CDN unreachable)'}")
                 notes.append(f"  · CDN requests: {cdn or 'none'}")
 
+                # הצהרה גלובלית ששמה כשם גלובל דפדפן מסתירה אותו מכל סקריפט שרץ
+                # אחריה. const self=[...] הסתיר כאן את self, ועוטף ה-UMD של
+                # tesseract.js — שנקרא כ-}(self,factory) — צירף את הספרייה למערך
+                # במקום ל-window. OCR מת בשקט, בלי שגיאה אחת בקונסולה.
+                shadowed = page.evaluate("""()=>{
+                  const names=['self','top','parent','globalThis','document','location','navigator','history','screen'];
+                  return names.filter(n=>{try{return eval(n)!==window[n]}catch(_e){return true}})}""")
+                if shadowed:
+                    fail("browser-globals", "גלובלים מוצלים בסקופ הגלובלי: " + ", ".join(shadowed))
+                else:
+                    ok("browser-globals", "no page declaration shadows a browser global")
+
                 cfg = page.evaluate("()=>({ref:DRIVECHECK_SUPABASE_REF,ready:googleVisionReady()})")
                 if not cfg["ready"]:
                     fail("config", "googleVisionReady() is false — endpoint or key malformed")
