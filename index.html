@@ -56,7 +56,6 @@ main{max-width:760px;margin:auto;padding:18px 14px 90px}.hero{text-align:center;
 .report{display:none;background:linear-gradient(135deg,#102d2b,#102a35);border:1px solid #2c5c53;border-radius:16px;padding:15px;margin-top:12px;line-height:1.55}.report h3{margin:0 0 10px}.report ul{padding-right:20px}.secondary{background:#18343e;color:#fff;border:1px solid #31505c;margin-top:9px}
 footer{position:fixed;bottom:0;left:0;right:0;background:#07131aef;border-top:1px solid #243c47;padding:10px;text-align:center;color:#a9b7bd;font-size:12px}
 @media(max-width:500px){.plate{flex-direction:column}.grid,.licenseGrid{grid-template-columns:1fr}.wide{grid-column:auto}}
-
 .landing{max-width:760px;margin:auto}
 .priceGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
 .priceCard{background:#0d2029;border:1px solid #2a4652;border-radius:16px;padding:15px}
@@ -67,7 +66,6 @@ footer{position:fixed;bottom:0;left:0;right:0;background:#07131aef;border-top:1p
 .paywall h3{margin:0 0 7px}.paywall p{color:var(--muted);font-size:13px}
 .planBtn{width:100%;margin-top:8px}
 @media(max-width:560px){.priceGrid{grid-template-columns:1fr}}
-
 .legalConsent{margin:14px 0;padding:14px;border:1px solid #31515c;border-radius:14px;background:#0c2028;font-size:14px;line-height:1.55}
 .legalConsent label{display:flex;gap:10px;align-items:flex-start}
 .legalConsent input{width:20px;height:20px;flex:0 0 auto;margin-top:2px}
@@ -78,20 +76,11 @@ footer{position:fixed;bottom:0;left:0;right:0;background:#07131aef;border-top:1p
 .legalSheet{max-width:720px;margin:25px auto;background:#102832;border:1px solid #31515c;border-radius:18px;padding:22px;color:#eef7f9;line-height:1.65}
 .legalSheet h2,.legalSheet h3{margin-top:0}.legalSheet h3{margin-top:22px}
 .legalClose{position:sticky;top:0;float:left;border:0;border-radius:10px;padding:8px 14px;font-weight:700}
-
 .feedbackBox{display:none;margin:18px 0;padding:18px;border:1px solid #31515c;border-radius:16px;background:#102832}
 .feedbackBox h3{margin:0 0 8px}.feedbackBox textarea{width:100%;min-height:110px;box-sizing:border-box;border-radius:12px;padding:12px;font:inherit}
-.clarificationBox{display:none;margin-top:18px;padding:18px;border:2px solid #e08600;border-radius:18px;background:#f4fbf9}
-.clarificationBox.show{display:block}.clarificationBox h3{margin:0 0 7px;font-size:22px}.clarificationBox>.sub{margin-bottom:14px}
-.clarificationChoices{display:grid;grid-template-columns:1fr;gap:12px}.clarificationChoice{border:1px solid #cbd8dd;border-radius:15px;padding:15px;background:#fff;display:flex;flex-direction:column;align-items:stretch}
-.clarificationChoice.paid{border-color:#e3a400;background:#fffdf5}.clarificationChoice h4{margin:0 0 7px;font-size:18px}.clarificationChoice p{margin:0 0 12px;line-height:1.55;color:#50666f}.clarificationChoice button{margin-top:auto}
-.clarificationPrice{display:inline-block;align-self:flex-start;margin-bottom:9px;padding:5px 9px;border-radius:999px;background:#fff4e0;color:#15202b;font-size:13px;font-weight:900}
-.clarificationChoice.paid .clarificationPrice{background:#fff0c8;color:#7a5700}.clarificationForm{display:none;margin-top:14px;padding-top:14px;border-top:1px solid #d9e2e6}.clarificationForm.show{display:block}
-.clarificationForm textarea{width:100%;min-height:120px;background:#fff}.clarificationForm .formNote{margin:8px 0;color:#50666f;font-size:14px;line-height:1.5}.clarificationCounter{display:flex;justify-content:space-between;gap:10px;margin-top:6px;color:#60717a;font-size:13px;font-weight:800}.clarificationCounter.limit{color:#a33a2d}.clarificationAdminPending{display:none;margin-top:18px;padding:14px;border:1px dashed #7d98a3;border-radius:14px;background:#eef4f6;color:#35515c}
 .stars{display:flex;gap:7px;justify-content:flex-start;direction:ltr;margin:10px 0 14px}
 .star{font-size:30px;background:none;border:0;cursor:pointer;opacity:.45;padding:2px}.star.on{opacity:1}
 .feedbackThanks{display:none;margin-top:10px;color:#52d6ba;font-weight:700}
-
 #landing{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:22px;background:linear-gradient(180deg,#07161d,#0b222b)}
 .landingCard{width:min(760px,100%);background:#102832;border:1px solid #31515c;border-radius:24px;padding:26px;box-shadow:0 18px 50px rgba(0,0,0,.35);text-align:center}
 .brandLogo{font-size:42px;font-weight:900;letter-spacing:.5px;margin:0}.brandLogo span{color:#52d6ba}
@@ -108,24 +97,15 @@ footer{position:fixed;bottom:0;left:0;right:0;background:#07131aef;border-top:1p
 #appShell{display:block}
 @media(max-width:600px){.inspectorWrap{grid-template-columns:1fr}.speech:after{display:none}.inspectorArt{}.brandLogo{font-size:36px}.trustRow{grid-template-columns:1fr}.landingTag{font-size:22px}}
 #landing .landingCard{padding-bottom:20px}
-
 /* DriveCheck V15: single-page flow - summary/pricing -> app */
 #landing{padding:0!important;align-items:flex-start!important;background:#07161d!important}
 #landing .landingCard{width:100%!important;max-width:760px!important;margin:0 auto!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
-
 .paidOnly{display:none!important}
-body.plan-premium .premiumFeature,
-body.plan-report .premiumFeature,body.plan-report .reportFeature,
-body.plan-consultation .premiumFeature,body.plan-consultation .reportFeature,body.plan-consultation .consultationFeature,
-body.plan-bundle .premiumFeature,body.plan-bundle.stage-report-open .reportFeature,body.plan-bundle.stage-consultation-open .consultationFeature,
-body.manager-mode.manager-all .paidOnly{display:block!important}
-.clarificationBox.show{display:none}
-body.plan-consultation .clarificationBox.show,body.plan-bundle.stage-consultation-open .clarificationBox.show,body.manager-mode.manager-all .clarificationBox.show{display:block}
+body.plan-premium .premiumFeature,body.plan-report .premiumFeature,body.plan-report .reportFeature,body.plan-bundle .premiumFeature,body.plan-bundle.stage-report-open .reportFeature,body.manager-mode.manager-all .paidOnly{display:block!important}
 .managerPlanControls{margin-top:12px;padding-top:12px;border-top:1px solid #f0c88a}.managerPlanControls b{display:block;margin-bottom:8px}.managerPlanButtons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.managerPlanButtons button{margin:0;background:#fff;color:#15202b;border:1px solid #7fcab3}.managerPlanStatus{margin-top:8px;font-size:13px;font-weight:800}
 .photoPreview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
 .photoPreview img{width:100%;height:120px;object-fit:cover;border-radius:10px}
 .photoPreview button{width:100%;margin-top:4px}.photoBox{margin-top:18px}
-
 /* DriveCheck secure payment */
 .paymentOverlay[hidden]{display:none!important}
 .paymentOverlay{position:fixed;inset:0;z-index:99999;background:rgba(8,28,34,.64);display:grid;place-items:center;padding:18px}
@@ -157,7 +137,6 @@ h2{font-size:22px;color:#14262d}.sub{color:var(--muted);font-size:15px}.label{co
 .legalLinks button{color:#47626c}.legalModal{background:rgba(15,28,34,.66)}.legalSheet{background:#fff;color:#17242b;border-color:#d9e2e6}
 footer{position:static;background:#edf2f4;border-top:1px solid #d9e2e6;color:#60717a;padding:18px;margin-top:24px}
 .freeAfterLookup{display:none}
-
 /* landing campaign image */
 .mktAdLink{display:block;max-width:760px;margin:24px auto 8px;border-radius:22px;overflow:hidden;box-shadow:0 16px 42px rgba(11,35,44,.16);background:#0b1b24}
 .mktAdLink img{display:block;width:100%;height:auto}
@@ -199,19 +178,18 @@ button{min-height:44px;cursor:pointer}button:disabled{cursor:not-allowed;opacity
 .inspectionHeaderGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}.inspectionOwnerField,.inspectionKmField{padding:15px;border:2px solid #b9ddd2;border-radius:15px;background:#f6fcfa}.inspectionOwnerField label,.inspectionKmLabel{display:block!important;margin:0 0 7px!important;color:#17352d!important;font-size:17px!important;font-weight:950!important}.inspectionOwnerField input{font-size:19px;font-weight:900;border-width:2px}.inspectionKmField{display:flex;flex-direction:column;justify-content:center}.inspectionKmValue{display:block;color:#10242c;font-size:24px;font-weight:950;line-height:1.25}.inspectionKmSource{display:block;margin-top:4px;color:#60717a;font-size:13px;font-weight:700}
 .ocrReview{display:none;margin-top:12px;padding-top:12px;border-top:1px solid #d9e2e6}.ocrReview .secondary{margin-top:8px}
 .formulaAdmin{display:none;border:2px solid #285f7a;background:#f2f8fb}.formulaAdminGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.formulaAdmin .wide{grid-column:1/-1}.formulaAdmin input,.formulaAdmin select,.formulaAdmin textarea{width:100%;background:#fff}.formulaAdmin textarea{min-height:80px}.formulaAdminStats{padding:11px 13px;border-radius:12px;background:#e7f3f8;color:#173f52;font-weight:800;margin:10px 0}.formulaAdminList{max-height:270px;overflow:auto;border:1px solid #d9e2e6;border-radius:12px;background:#fff;margin-top:12px}.formulaAdminItem{padding:10px 12px;border-bottom:1px solid #e6edef}.formulaAdminItem:last-child{border-bottom:0}.formulaAdminItem small{display:block;color:#60717a;margin-top:3px}.formulaAdminActions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.formulaAdminActions button{flex:1;min-width:150px}.contextNote{margin-top:8px;padding:9px 11px;border-radius:10px;background:#eef4f6;color:#35515c}.matchSource{font-size:12px;color:#60717a;margin-top:7px}
-.customerReplyAdmin{display:none;margin-top:20px;padding:18px;border:2px solid #285f7a;border-radius:16px;background:#f2f8fb}.customerReplyAdmin h2{margin-bottom:6px}.replyTable{width:100%;border-collapse:separate;border-spacing:0 9px}.replyTable th{width:160px;text-align:right;vertical-align:top;padding:12px 0 0 10px;color:#35515c}.replyTable td{padding:0}.replyTable input,.replyTable textarea{width:100%;box-sizing:border-box;background:#fff}.replyTable textarea{min-height:92px}.replyTable textarea.replyAnswer{min-height:170px}.replyActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.replyActions button{flex:1;min-width:150px}.replyDrafts{margin-top:16px;border-top:1px solid #cbd8dd;padding-top:14px}.replyDraftItem{background:#fff;border:1px solid #d9e2e6;border-radius:12px;padding:12px;margin:9px 0}.replyDraftItem small{display:block;color:#60717a;margin:4px 0 8px}.replyDraftItem .miniActions{display:flex;gap:7px;flex-wrap:wrap}.replyDraftItem .miniActions button{padding:8px 11px;font-size:13px}.replySafetyNote{margin:10px 0;padding:11px 13px;border-radius:12px;background:#fff7e8;border:1px solid #f0cf8a;color:#694d13;line-height:1.55}
 .guidedSection{padding:0!important;overflow:hidden}.guidedSection>summary{list-style:none;cursor:pointer;padding:18px;display:flex;align-items:center;gap:12px;font-size:20px;font-weight:900}.guidedSection>summary::-webkit-details-marker{display:none}.guidedSection>summary:after{content:'פתיחה';margin-right:auto;font-size:12px;color:#0b7f67;background:#fff4e0;border-radius:999px;padding:6px 10px}.guidedSection[open]>summary:after{content:'סגירה'}.guidedSection>.stepContent{padding:0 18px 18px}.questionCount{color:#60717a;font-size:13px;font-weight:800;margin-bottom:9px}.guidedChecks .check{display:none}.guidedChecks .check.active{display:block}.checkTitle{display:block;font-size:18px;line-height:1.55;margin-bottom:14px}.quickChoices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.quickChoice{background:#eef4f6;color:#17323c;border:1px solid #cbd8dd;padding:11px 7px;font-size:13px}.quickChoice.selected{background:#e08600;color:#fff;border-color:#0b8d6b}.quickChoice.issue.selected{background:#d97b24;border-color:#bd671b}.quickChoice.skip.selected{background:#71818a;border-color:#5f6e76}.guidedNav{display:flex;align-items:center;gap:10px;margin-top:12px}.guidedNav button{flex:1;background:#eaf2f5;color:#17323c;border:1px solid #cbd8dd}.guidedProgress{font-size:13px;font-weight:800;color:#60717a;white-space:nowrap}.licenseDetails{margin:12px 0;border:1px solid #d9e2e6;border-radius:12px;background:#f8fafb}.licenseDetails>summary{padding:13px;font-weight:900;cursor:pointer}.licenseDetails>div{padding:0 13px 13px}.legalCompact{margin:12px 0 0!important;padding:12px!important}.legalCompact p{margin:0 0 9px;color:#50666f}.legalCompact a,.legalCompact button{color:#0b7f67;background:none;border:0;text-decoration:underline;padding:0;font:inherit;font-weight:800}.simpleFinding textarea{background:#fff;color:#17242b}.managerOnly{display:none}
-.stageTitle{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.stagePriceTag{display:inline-flex;align-items:center;min-height:30px;padding:5px 11px;border-radius:999px;background:#fff4e0;color:#15202b;border:1px solid #b9e1d5;font-size:14px;font-weight:900;line-height:1.25;white-space:nowrap}.stagePriceTag.free{background:#e9f7ee;color:#17643c;border-color:#bfe1ca}.includedTag{display:inline-flex;margin-inline-start:auto;padding:4px 9px;border-radius:999px;background:#edf5f7;color:#47626c;font-size:12px;font-weight:850;white-space:nowrap}.clarificationBox .stageTitle{margin:0 0 7px}.serviceIntro{border:2px solid #b9e1d5;background:linear-gradient(135deg,#f5fcfa,#fff)}.serviceIntro .serviceIntroList{margin:12px 0 0;padding-right:20px;color:#50666f;line-height:1.75}.serviceIntro .caseLabel{margin-bottom:10px}.card h2,.guidedSection>summary{line-height:1.35}.primary,.secondary,.mktBtn{font-size:16px;line-height:1.35}.priceCard{box-shadow:0 7px 20px rgba(16,45,53,.06)}
+.stageTitle{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.stagePriceTag{display:inline-flex;align-items:center;min-height:30px;padding:5px 11px;border-radius:999px;background:#fff4e0;color:#15202b;border:1px solid #b9e1d5;font-size:14px;font-weight:900;line-height:1.25;white-space:nowrap}.stagePriceTag.free{background:#e9f7ee;color:#17643c;border-color:#bfe1ca}.includedTag{display:inline-flex;margin-inline-start:auto;padding:4px 9px;border-radius:999px;background:#edf5f7;color:#47626c;font-size:12px;font-weight:850;white-space:nowrap}.serviceIntro{border:2px solid #b9e1d5;background:linear-gradient(135deg,#f5fcfa,#fff)}.serviceIntro .serviceIntroList{margin:12px 0 0;padding-right:20px;color:#50666f;line-height:1.75}.serviceIntro .caseLabel{margin-bottom:10px}.card h2,.guidedSection>summary{line-height:1.35}.primary,.secondary,.mktBtn{font-size:16px;line-height:1.35}.priceCard{box-shadow:0 7px 20px rgba(16,45,53,.06)}
 @media(max-width:500px){.quickChoices{grid-template-columns:1fr}.quickChoice{font-size:14px}.guidedSection>summary{font-size:18px}}
-@media(max-width:760px){.mktHero{padding:30px 0 24px}.mktHeroGrid,.mktAbout,.afterGrid,.clarificationChoices{grid-template-columns:1fr}.mktGrid3{grid-template-columns:1fr}.mktOutcome{grid-template-columns:1fr 1fr}.mktHeroCard{padding:18px}.mktLead{font-size:18px}.mktCtas{flex-direction:column}.mktBtn{width:100%}main{padding-top:12px}.card{padding:18px;margin:20px 0}.credentials strong{font-size:25px}.credentials span{font-size:16px}.scopeStrip{grid-template-columns:1fr}.mktStep{grid-template-columns:38px 1fr}.mktNum{width:38px;height:38px}.mktStepPrice{grid-column:2;text-align:right}.mktBundle{align-items:flex-start;flex-direction:column}.guidedSection>summary{align-items:flex-start;flex-wrap:wrap}.guidedSection>summary:after{margin-right:0;margin-inline-start:auto}.includedTag{order:3;margin-inline-start:0}}
-@media(max-width:460px){.mktOutcome{grid-template-columns:1fr}.priceGrid{grid-template-columns:1fr}.licenseGrid,.grid,.formulaAdminGrid,.inspectionIdentityGrid,.inspectionHeaderGrid{grid-template-columns:1fr}.formulaAdmin .wide{grid-column:auto}.mktWrap{padding:0 14px}.replyTable,.replyTable tbody,.replyTable tr,.replyTable th,.replyTable td{display:block;width:100%}.replyTable th{padding:9px 0 5px}.inspectionIdentityValue{font-size:19px}}
+@media(max-width:760px){.mktHero{padding:30px 0 24px}.mktHeroGrid,.mktAbout,.afterGrid{grid-template-columns:1fr}.mktGrid3{grid-template-columns:1fr}.mktOutcome{grid-template-columns:1fr 1fr}.mktHeroCard{padding:18px}.mktLead{font-size:18px}.mktCtas{flex-direction:column}.mktBtn{width:100%}main{padding-top:12px}.card{padding:18px;margin:20px 0}.credentials strong{font-size:25px}.credentials span{font-size:16px}.scopeStrip{grid-template-columns:1fr}.mktStep{grid-template-columns:38px 1fr}.mktNum{width:38px;height:38px}.mktStepPrice{grid-column:2;text-align:right}.mktBundle{align-items:flex-start;flex-direction:column}.guidedSection>summary{align-items:flex-start;flex-wrap:wrap}.guidedSection>summary:after{margin-right:0;margin-inline-start:auto}.includedTag{order:3;margin-inline-start:0}}
+@media(max-width:460px){.mktOutcome{grid-template-columns:1fr}.priceGrid{grid-template-columns:1fr}.licenseGrid,.grid,.formulaAdminGrid,.inspectionIdentityGrid,.inspectionHeaderGrid{grid-template-columns:1fr}.formulaAdmin .wide{grid-column:auto}.mktWrap{padding:0 14px}.inspectionIdentityValue{font-size:19px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style><meta name="buytest-build" content="buytest-v72-grounded-findings-core-summary">
 
 <style id="drivecheck-theme">
 /* ==========================================================================
    DriveCheck — Instrument Cluster Theme
-   שכבת עיצוב אחת ואחרונה. גרפיט + ענבר, בהשראת לוח מחוונים של רכב.
+   שכבת עיצוב אחת ואחרונה. גרפיט + ענבר,בהשראת לוח מחוונים של רכב.
    נטענת אחרי כל שאר הסגנונות ולכן גוברת עליהם.
    ========================================================================== */
 :root{
@@ -234,7 +212,6 @@ button{min-height:44px;cursor:pointer}button:disabled{cursor:not-allowed;opacity
   --line:var(--dc-line); --txt:var(--dc-txt); --muted:var(--dc-txt-2);
   --a:var(--dc-amber); --warn:var(--dc-amber); --bad:var(--dc-bad);
 }
-
 /* ---------- base ---------- */
 html{background:var(--dc-bg)}
 body{
@@ -268,15 +245,12 @@ p,li,span,label{color:inherit}
 a{color:var(--dc-amber)}
 .sub,.label,.muted{color:var(--dc-txt-2)}
 strong,b{color:var(--dc-txt)}
-/* מספרים תמיד בגופן המחוונים, בעמודות יציבות */
+/* מספרים תמיד בגופן המחוונים,בעמודות יציבות */
 .value,.price,.mktStepPrice,.stagePriceTag,.inspectionKmValue,.inspectionIdentityValue,.dc-num{
   font-family:var(--dc-num);font-variant-numeric:tabular-nums;letter-spacing:0
 }
-
 /* ---------- surfaces ---------- */
-.card,.status,.box,.check,.info,.priceCard,.paywall,.legalConsent,.feedbackBox,
-.uploadPanel,.mktInfoCard,.mktOutcomeItem,.mktHeroCard,.checkrow,.formulaAdmin,
-.customerReplyAdmin,.replyDraftItem,.formulaAdminList,.mktFaq details{
+.card,.status,.box,.check,.info,.priceCard,.paywall,.legalConsent,.feedbackBox,.uploadPanel,.mktInfoCard,.mktOutcomeItem,.mktHeroCard,.checkrow,.formulaAdmin,.formulaAdminList,.mktFaq details{
   background:var(--dc-panel);
   border:1px solid var(--dc-line);
   color:var(--dc-txt);
@@ -300,7 +274,6 @@ footer{
   color:var(--dc-txt-3);padding:26px 16px;margin-top:34px;font-family:var(--dc-num);
   font-size:13px;letter-spacing:.4px
 }
-
 /* ---------- controls ---------- */
 button,.mktBtn{font-family:var(--dc-ui);font-weight:800;letter-spacing:-.2px;border-radius:var(--dc-r-sm)}
 .primary,.mktBtnPrimary{
@@ -311,14 +284,14 @@ button,.mktBtn{font-family:var(--dc-ui);font-weight:800;letter-spacing:-.2px;bor
 }
 .primary:hover,.mktBtnPrimary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,149,0,.34),inset 0 1px 0 rgba(255,255,255,.34)}
 .primary:active,.mktBtnPrimary:active{transform:translateY(0) scale(.985)}
-.secondary,.devBtn,.findingBtn,.quickChoice,.mktBtnGhost,.legalClose,.replyActions button,.formulaAdminActions button{
+.secondary,.devBtn,.findingBtn,.quickChoice,.mktBtnGhost,.legalClose,.formulaAdminActions button{
   background:var(--dc-panel-3);color:var(--dc-txt);border:1px solid var(--dc-line-2);
   transition:background .16s,border-color .16s,transform .16s var(--dc-ease)
 }
 .secondary:hover,.devBtn:hover,.findingBtn:hover,.quickChoice:hover,.mktBtnGhost:hover{
   background:#26303f;border-color:var(--dc-amber-line);transform:translateY(-1px)
 }
-.plate input,.field input,.field select,textarea,.reportInput,.replyTable input,.replyTable textarea{
+.plate input,.field input,.field select,textarea,.reportInput{
   background:var(--dc-panel-2);color:var(--dc-txt);border:1px solid var(--dc-line-2);
   border-radius:var(--dc-r-sm);font-family:var(--dc-ui);
   transition:border-color .16s,box-shadow .16s,background .16s
@@ -327,7 +300,7 @@ input::placeholder,textarea::placeholder{color:var(--dc-txt-3)}
 .plate input:focus,.field input:focus,.field select:focus,textarea:focus{
   border-color:var(--dc-amber);box-shadow:0 0 0 3px var(--dc-amber-dim);outline:0;background:var(--dc-panel-3)
 }
-/* לוחית רישוי — נשארת בצהוב ישראלי אמיתי, זה עוגן ההיכר של המסך */
+/* לוחית רישוי — נשארת בצהוב ישראלי אמיתי,זה עוגן ההיכר של המסך */
 .plate input{
   background:linear-gradient(180deg,#ffdc4a,#f5c400);color:#101010;
   border:2px solid #b58c00;font-family:var(--dc-num);font-weight:800;
@@ -339,7 +312,6 @@ input[type=checkbox]{accent-color:var(--dc-amber)}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
   outline:2px solid var(--dc-amber);outline-offset:3px
 }
-
 /* ---------- semantic states ---------- */
 .warn{color:var(--dc-amber)}.green{color:var(--dc-ok)}.red{color:var(--dc-bad)}
 .promise{background:var(--dc-amber-dim);border:1px solid var(--dc-amber-line);color:var(--dc-txt);border-radius:var(--dc-r)}
@@ -385,21 +357,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .inspectionKmSource{color:var(--dc-txt-3)}
 .serviceIntro{border:1px solid var(--dc-amber-line);background:linear-gradient(180deg,rgba(255,176,32,.06),var(--dc-panel))}
 .serviceIntro .serviceIntroList{color:var(--dc-txt-2)}
-.formulaAdmin,.customerReplyAdmin{border:1px solid var(--dc-info);background:var(--dc-panel)}
+.formulaAdmin{border:1px solid var(--dc-info);background:var(--dc-panel)}
 .formulaAdminStats{background:var(--dc-info-dim);color:var(--dc-info);border-radius:var(--dc-r-sm)}
 .formulaAdminItem{border-bottom-color:var(--dc-line)}
-.formulaAdminItem small,.replyDraftItem small,.replyTable th{color:var(--dc-txt-2)}
+.formulaAdminItem small{color:var(--dc-txt-2)}
 .contextNote{color:var(--dc-txt-2)}
-.clarificationBox{background:var(--dc-panel);border:1px solid var(--dc-amber-line);border-radius:var(--dc-r-lg);color:var(--dc-txt)}
-.clarificationChoice{background:var(--dc-panel-2);border:1px solid var(--dc-line);border-radius:var(--dc-r);color:var(--dc-txt)}
-.clarificationChoice.paid{border-color:var(--dc-amber-line);background:linear-gradient(180deg,rgba(255,176,32,.06),var(--dc-panel-2))}
-.clarificationChoice p{color:var(--dc-txt-2)}
-.clarificationPrice{background:var(--dc-amber-dim);color:var(--dc-amber)}
-.clarificationForm{border-top-color:var(--dc-line)}
-.clarificationForm textarea{background:var(--dc-panel-2)}
-.clarificationForm .formNote,.clarificationCounter{color:var(--dc-txt-2)}
-.clarificationCounter.limit{color:var(--dc-bad)}
-.clarificationAdminPending{background:var(--dc-panel-2);border:1px dashed var(--dc-line-2);color:var(--dc-txt-2)}
 .feedbackThanks{color:var(--dc-ok)}
 .legalLinks button{color:var(--dc-txt-2)}
 .legalLinks button:hover{color:var(--dc-amber)}
@@ -420,7 +382,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .stars .star{color:var(--dc-txt-3);opacity:.55;transition:.18s var(--dc-ease)}
 .stars .star:hover{color:var(--dc-amber);opacity:.85}
 .stars .star.on{color:var(--dc-amber);opacity:1;transform:scale(1.12);text-shadow:0 0 14px rgba(255,176,32,.45)}
-
 /* ==========================================================================
    MARKETING LANDING
    ========================================================================== */
@@ -494,12 +455,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .credentials strong{font-size:15px;color:var(--dc-txt-2);font-weight:800;letter-spacing:.2px}
 .credentials span{font-size:15px;color:var(--dc-txt-2);font-weight:600;line-height:1.65}
 .credentials b{color:var(--dc-amber)}
-
 /* ==========================================================================
    MOTION — "האתר חי ונושם"
    ========================================================================== */
 
-/* [1] BOOT SEQUENCE — כל הנוריות נדלקות יחד ואז נכבות אחת-אחת, כמו התנעה */
+/* [1] BOOT SEQUENCE — כל הנוריות נדלקות יחד ואז נכבות אחת-אחת,כמו התנעה */
 #dcBoot{
   position:fixed;inset:0;z-index:999999;background:var(--dc-bg);
   display:grid;place-content:center;gap:26px;justify-items:center;
@@ -517,7 +477,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 #dcBoot .lamp.ok{background:var(--dc-ok-dim);border-color:var(--dc-ok-line);color:var(--dc-ok);box-shadow:none;opacity:1}
 #dcBoot .bootWord{font-family:var(--dc-num);letter-spacing:5px;font-size:12px;color:var(--dc-txt-3);text-transform:uppercase}
 #dcBoot svg{filter:drop-shadow(0 0 24px rgba(255,149,0,.32))}
-
 /* [2] מחוג טכומטר ב-hero */
 .dcTacho{position:relative;width:100%;max-width:190px;margin:0 0 4px auto}
 .dcTacho svg{display:block;width:100%;height:auto;overflow:visible}
@@ -539,24 +498,22 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .dcTacho .unit{display:block;font-size:10px;letter-spacing:3px;color:var(--dc-txt-3);margin-top:3px}
 @keyframes dcRev{0%{stroke-dashoffset:var(--dc-arc,236)}62%{stroke-dashoffset:calc(var(--dc-arc,236) * .06)}100%{stroke-dashoffset:calc(var(--dc-arc,236) * .34)}}
 @keyframes dcNeedle{0%{transform:rotate(-118deg)}62%{transform:rotate(104deg)}100%{transform:rotate(40deg)}}
-
 /* [3] גלגלת אודומטר למספרים */
 .dcOdo{display:inline-flex;align-items:baseline;flex:none;flex-wrap:nowrap;white-space:nowrap;direction:ltr;font-family:var(--dc-num);font-variant-numeric:tabular-nums}
-.dcOdo .reel{display:inline-block;height:1em;overflow:hidden;vertical-align:bottom}
+.dcOdo .reel{display:inline-block;height:1em;overflow:hidden;vertical-align:bottom;user-select:none}
+.dcSr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
 .dcOdo .reel i{display:block;font-style:normal;line-height:1;transition:transform 1.15s var(--dc-ease)}
-
 /* [4] נורת check-engine נושמת */
 .dcBreathe,.reportIdentityCheck.partial,.meaningCard.warn,.priceCard.current{animation:dcBreathe 4s ease-in-out infinite}
 @keyframes dcBreathe{
-  0%,100%{box-shadow:0 0 0 0 rgba(255,176,32,0)}
-  50%{box-shadow:0 0 0 4px rgba(255,176,32,.10),0 0 26px rgba(255,176,32,.14)}
+0%,100%{box-shadow:0 0 0 0 rgba(255,176,32,0)}
+50%{box-shadow:0 0 0 4px rgba(255,176,32,.10),0 0 26px rgba(255,176,32,.14)}
 }
 .dcLamp{
   display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;
   background:var(--dc-amber-dim);color:var(--dc-amber);border:1px solid var(--dc-amber-line);
   font-size:14px;animation:dcBreathe 3.2s ease-in-out infinite
 }
-
 /* [5] קו סריקה על כרטיסי ממצא */
 .dcScan{position:relative;overflow:hidden}
 .dcScan::after{
@@ -565,7 +522,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   transform:translateX(-140%);animation:dcSweep 1.15s var(--dc-ease) forwards;pointer-events:none
 }
 @keyframes dcSweep{to{transform:translateX(320%)}}
-
 /* [6] "סורק מאגרים…" */
 .dcScanList{display:grid;gap:9px;margin-top:12px}
 .dcScanHead{font-family:var(--dc-num);font-size:12px;letter-spacing:1.6px;color:var(--dc-txt-3);text-transform:uppercase;margin-bottom:2px}
@@ -588,7 +544,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   background-size:400% 100%;animation:dcShimmer 1.35s linear infinite;border-radius:8px
 }
 @keyframes dcShimmer{0%{background-position:100% 0}100%{background-position:0 0}}
-
 /* [7] מד התקדמות חצי-עיגול */
 .dcGauge{display:flex;align-items:center;gap:14px}
 .dcGauge svg{width:78px;height:46px;overflow:visible;flex:none}
@@ -600,7 +555,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 }
 .dcGauge .g-label b{display:block;font-family:var(--dc-num);font-size:19px;color:var(--dc-amber);line-height:1.1}
 .dcGauge .g-label span{font-size:12px;color:var(--dc-txt-3)}
-
 /* [8] פס מחוונים דביק */
 #dcBar{
   position:sticky;top:0;z-index:9000;
@@ -627,18 +581,16 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 #dcBar.s-active .bStage .pip{background:var(--dc-amber);box-shadow:0 0 9px rgba(255,176,32,.65);animation:dcPulseDot 1.6s ease-in-out infinite}
 #dcBar .bCta{margin-inline-start:4px;min-height:34px;padding:0 14px;font-size:13px;border-radius:9px}
 @media(max-width:600px){#dcBar .bBrand span{display:none}}
-
 /* [9] מעברי שלב — "העברת הילוך" + reveal בגלילה */
 .dcShift{animation:dcShift .46s var(--dc-ease)}
 @keyframes dcShift{
-  0%{opacity:0;transform:translateY(16px) scale(.985)}
-  55%{opacity:1;transform:translateY(-3px) scale(1.004)}
-  100%{opacity:1;transform:none}
+0%{opacity:0;transform:translateY(16px) scale(.985)}
+55%{opacity:1;transform:translateY(-3px) scale(1.004)}
+100%{opacity:1;transform:none}
 }
 .dcReveal{opacity:0;transform:translateY(22px);transition:opacity .62s var(--dc-ease),transform .62s var(--dc-ease)}
 .dcReveal.in{opacity:1;transform:none}
 .card,.mktInfoCard,.mktOutcomeItem,.priceCard{will-change:auto}
-
 /* ---------- layout של המרקאפ החדש ---------- */
 /* סקשני דף הנחיתה היו מוסתרים (משפך חד-מסכי). כדי לחזור לזה: display:none */
 #marketingLanding .mktSection{display:block}
@@ -647,8 +599,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .mktCtas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
 .mktStep{grid-template-columns:42px minmax(0,1fr) auto}
 .mktStep>div{min-width:0}
-.mktStep b{display:block;font-size:16px;line-height:1.4;color:var(--dc-txt)}
-.mktStep span{display:block;margin-top:3px;color:var(--dc-txt-2);font-size:13.5px;line-height:1.5;font-weight:500}
+.mktStep>div>b{display:block;font-size:16px;line-height:1.4;color:var(--dc-txt)}
+/* רק תיאור השלב — לא לתפוס את גלגלת האודומטר שבתוך .mktStepPrice */
+.mktStep>div>b+span{display:block;margin-top:3px;color:var(--dc-txt-2);font-size:13.5px;line-height:1.5;font-weight:500}
 .mktGrid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .mktInfoCard{padding:26px}
 .mktInfoCard h3{margin:16px 0 8px;font-size:19px}
@@ -667,7 +620,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .mktClients b{display:block;margin-bottom:8px;font-size:18px}
 @media(max-width:860px){.mktGrid3{grid-template-columns:1fr}.mktOutcome{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.mktOutcome{grid-template-columns:1fr}.credentials{gap:16px}.dcTacho{max-width:140px}}
-
 /* ---------- responsive ---------- */
 @media(max-width:900px){
   .mktHeroGrid,.mktAbout{grid-template-columns:1fr}
@@ -675,14 +627,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   .mktSection{padding:52px 0}
 }
 @media(max-width:600px){
-  main{padding:18px 14px 90px}
-  .card{padding:18px;border-radius:var(--dc-r)}
-  .mktHero{padding:30px 0 40px}
+main{padding:18px 14px 90px}
+.card{padding:18px;border-radius:var(--dc-r)}
+.mktHero{padding:30px 0 40px}
 }
-
 /* ==========================================================================
    סגירת דליפות מהעיצוב הבהיר הישן
-   סלקטורים בעלי ספציפיות גבוהה יותר, ורכיבי הדוח שנוצרים ב-JS.
+   סלקטורים בעלי ספציפיות גבוהה יותר,ורכיבי הדוח שנוצרים ב-JS.
    ========================================================================== */
 
 /* --- כפתורים וקישורים שהיו טורקיז --- */
@@ -697,7 +648,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 }
 .priceCard.locked .stageState{background:var(--dc-panel-3);color:var(--dc-txt-3)}
 .imageModal button{background:var(--dc-panel);color:var(--dc-txt);border:1px solid var(--dc-line-2)}
-
 /* --- פלט הדוח (נוצר ב-JS) — הליבה של השירות בתשלום --- */
 .interpretation>p{color:var(--dc-txt-2)}
 .meaningCard{background:var(--dc-panel-2);border:1px solid var(--dc-line);border-right:4px solid var(--dc-amber);color:var(--dc-txt)}
@@ -727,7 +677,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .overallProfessionalConclusion h5{color:var(--dc-txt)}
 .overallProfessionalConclusion p{color:var(--dc-txt-2)}
 .overallProfessionalConclusion .legalConclusion{border-top:1px solid var(--dc-line);color:var(--dc-txt-3)}
-.unknownList,.replySafetyNote{background:var(--dc-amber-dim);border:1px solid var(--dc-amber-line);color:var(--dc-txt);border-radius:var(--dc-r-sm)}
+.unknownList{background:var(--dc-amber-dim);border:1px solid var(--dc-amber-line);color:var(--dc-txt);border-radius:var(--dc-r-sm)}
 .dtcStatusCount{background:var(--dc-amber-dim);color:var(--dc-amber);border:1px solid var(--dc-amber-line)}
 .privacyStrip{background:var(--dc-info-dim);color:var(--dc-txt-2);border:1px solid rgba(99,179,255,.28);border-radius:var(--dc-r-sm)}
 .scopeStrip span{background:var(--dc-panel-2);color:var(--dc-txt-2);border:1px solid var(--dc-line)}
@@ -739,19 +689,12 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .reportIdentityCheck h5{color:inherit}
 .licenseDetails{background:var(--dc-panel-2);border:1px solid var(--dc-line);border-radius:var(--dc-r-sm)}
 .licenseDetails>summary{color:var(--dc-txt)}
-
 /* --- נגישות: טקסט משני שנשאר עם צבעי העיצוב הבהיר --- */
-.legalConsent p,.legalCompact p,.paymentDialog p,.clarificationChoice p,
-.clarificationForm .formNote,.clarificationCounter,.guidedProgress,.questionCount,
-.interpretation>p,.mktInfoCard p,.mktOutcomeItem span,.uploadPanel p,.paymentNote,
-.stageState,.oldPrice,.inspectionKmSource,.legalConclusion,footer,
-.overallProfessionalConclusion .legalConclusion{color:var(--dc-txt-2)}
-
+.legalConsent p,.legalCompact p,.paymentDialog p,.guidedProgress,.questionCount,.interpretation>p,.mktInfoCard p,.mktOutcomeItem span,.uploadPanel p,.paymentNote,.stageState,.oldPrice,.inspectionKmSource,.legalConclusion,footer,.overallProfessionalConclusion .legalConclusion{color:var(--dc-txt-2)}
 /* --- מצב מנהל (היה inline style בהיר) --- */
 #managerActiveNotice{background:var(--dc-ok-dim)!important;border:1px solid var(--dc-ok-line)!important;color:var(--dc-txt)!important}
 #managerActiveNotice b{color:var(--dc-ok)}
 #managerPreviewBox{background:var(--dc-panel)!important;color:var(--dc-txt)!important}
-
 /* ---------- נגישות: כיבוד העדפת תנועה מופחתת ---------- */
 @media(prefers-reduced-motion:reduce){
   body::before{transform:none}
@@ -781,7 +724,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     <img class="mktBrandLogo" src="assets/drivecheck-wordmark.svg" alt="DriveCheck" width="330" height="79">
     <span class="mktEyebrow">לפני המכון · ואחרי המכון</span>
     <h1>אל תיכנס למכון <span>בלי לדעת מה לשאול</span></h1>
-    <p class="mktLead">מתחילים בחינם בנתוני הרכב ובהתאמת הרישיון. משם ממשיכים בשלושה שלבים לפי הסדר: בדיקה עצמית לפני המכון, פענוח דוח הבוחן אחריו, ואם צריך — התייעצות אישית.</p>
+    <p class="mktLead">מתחילים בחינם בנתוני הרכב ובהתאמת הרישיון. משם ממשיכים בשני שלבים לפי הסדר: בדיקה עצמית לפני המכון, ופענוח דוח הבוחן אחריו.</p>
 
     <div class="credentials">
       <div class="dcTacho" aria-hidden="true">
@@ -810,7 +753,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   </div>
 
   <div class="mktHeroCard">
-    <h3>שלב מקדים בחינם, ואחריו שלושה שלבים בתשלום</h3>
+    <h3>שלב מקדים בחינם, ואחריו שני שלבים בתשלום</h3>
     <div class="mktSteps">
       <div class="mktStep isFree">
         <div class="mktNum">00</div>
@@ -827,15 +770,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
         <div><b>פענוח הדוח אחרי המכון</b><span>נפתח רק לאחר השלמת שלב 1.</span></div>
         <div class="mktStepPrice">39 ₪</div>
       </div>
-      <div class="mktStep">
-        <div class="mktNum">03</div>
-        <div><b>התייעצות אישית עם בוחן רכב</b><span>נפתחת רק לאחר השלמת שלב 2.</span></div>
-        <div class="mktStepPrice">49 ₪</div>
-      </div>
     </div>
     <div class="mktBundle">
-      <b>החבילה המלאה — רוכשים מראש, מתקדמים לפי הסדר</b>
-      <strong>120 ₪ <del>137 ₪</del></strong>
+      <b>שני השלבים מראש — מתקדמים לפי הסדר</b>
+      <strong>79 ₪ <del>88 ₪</del></strong>
     </div>
   </div>
 </div></div>
@@ -903,7 +841,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="mktFaq">
     <details><summary>האם DriveCheck מחליף בדיקה במכון?</summary><p>לא. השלב הראשון מארגן בדיקות בסיסיות ודגשים למכון; השלב השני מסביר את סיכום הבוחן. השירות אינו בודק את הרכב פיזית ואינו מאשר תקינות.</p></details>
     <details><summary>מה מקבלים בחינם?</summary><p>מזינים או סורקים מספר רכב, מקבלים את הנתונים הזמינים ממאגרי משרד התחבורה, ובודקים את התאמת רישיון הרכב לרכב ולמוכר.</p></details>
-    <details><summary>אילו שירותים אפשר לרכוש?</summary><p>מתחילים בשלב 1 — בדיקה עצמית לפני המכון ב־49 ₪. לאחר השלמתו נפתח שלב 2 — פענוח אחרי המכון ב־39 ₪; ולאחריו שלב 3 — התייעצות אישית ב־49 ₪. אפשר גם לרכוש את החבילה המלאה מראש ב־120 ₪.</p></details>
+    <details><summary>אילו שירותים אפשר לרכוש?</summary><p>מתחילים בשלב 1 — בדיקה עצמית לפני המכון ב־49 ₪. לאחר השלמתו נפתח שלב 2 — פענוח אחרי המכון ב־39 ₪. אפשר גם לרכוש את שני השלבים מראש ב־79 ₪.</p></details>
     <details><summary>מה קורה אם חסר מידע על הרכב?</summary><p>מאגרים ציבוריים אינם תמיד מלאים. כאשר נתון אינו זמין, DriveCheck מציג זאת במפורש במקום להמציא מידע, וממליץ לאמת פרטים מהותיים מול מסמכי הרכב והגורמים המתאימים.</p></details>
     <details><summary>האם DriveCheck אומר אם לקנות את הרכב?</summary><p>לא. אין המלצת קנייה או אי־קנייה, אין הערכת שווי או עלות תיקון, ואין קביעה לגבי ירידת ערך. DriveCheck משקף משמעויות ושאלות לבירור בלבד; ההחלטה היא שלך.</p></details>
   </div>
@@ -953,8 +891,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 </section>
 <section class="card" id="fullCheckOffer" style="display:none">
 <h2>מסלול DriveCheck לרכב הזה</h2>
-<p class="sub">כל שלושת השלבים מוצגים כאן מראש. מתקדמים לפי הסדר, וכל שלב נפתח רק לאחר השלמת השלב שלפניו.</p>
-<div class="sequenceNotice">מתחילים בשלב 1 ב־49 ₪. אפשר לשלם על כל שלב כאשר מגיעים אליו, או לרכוש מראש את כל המסלול ב־120 ₪ — בלי לדלג על סדר העבודה.</div>
+<p class="sub">שני השלבים מוצגים כאן מראש. מתקדמים לפי הסדר, ושלב 2 נפתח רק לאחר השלמת שלב 1.</p>
+<div class="sequenceNotice">מתחילים בשלב 1 ב־49 ₪. אפשר לשלם על כל שלב כאשר מגיעים אליו, או לרכוש מראש את שני השלבים ב־79 ₪ — בלי לדלג על סדר העבודה.</div>
 <div class="priceGrid" aria-label="מסלולי DriveCheck">
   <article class="priceCard current" id="premiumPlanCard">
     <span class="bundleBadge">שלב 1 · לפני המכון</span>
@@ -972,21 +910,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     <span class="stageState" id="reportPlanState">נפתח לאחר השלמת שלב 1</span>
     <button class="secondary planBtn" id="reportPlanButton" type="button" onclick="startPayment('report')" disabled>שלב 2 נעול עד להשלמת שלב 1</button>
   </article>
-  <article class="priceCard locked" id="consultationPlanCard">
-    <span class="bundleBadge">שלב 3 · הסבר אישי</span>
-    <h3>התייעצות אישית עם בוחן רכב</h3>
-    <div class="price">49 ₪</div>
-    <p>מעבר אישי של בוחן רכב מוסמך על הדוח, ומתן הסבר מקצועי על הממצאים ועל הבירורים הנדרשים.</p>
-    <span class="stageState" id="consultationPlanState">נפתח לאחר השלמת שלב 2</span>
-    <button class="secondary planBtn" id="consultationPlanButton" type="button" onclick="startPayment('consultation')" disabled>שלב 3 נעול עד להשלמת שלב 2</button>
-  </article>
   <article class="priceCard featured" id="bundlePlanCard">
     <span class="bundleBadge">החבילה המשתלמת</span>
     <h3>חבילת DriveCheck המלאה</h3>
-    <div class="price">120 ₪ <span class="oldPrice">137 ₪</span><span class="saving">חיסכון של 17 ₪</span></div>
-    <p>בדיקה עצמית, פענוח דוח והתייעצות אישית לרכב אחד. רוכשים פעם אחת, והשלבים נפתחים לפי הסדר.</p>
-    <span class="stageState" id="bundlePlanState">כל המסלול מראש — ללא דילוג על שלבים</span>
-    <button class="primary planBtn" id="bundlePlanButton" type="button" onclick="startPayment('bundle')">רכישת כל המסלול – 120 ₪</button>
+    <div class="price">79 ₪ <span class="oldPrice">88 ₪</span><span class="saving">חיסכון של 9 ₪</span></div>
+    <p>בדיקה עצמית לפני המכון ופענוח הדוח אחריו, לרכב אחד. רוכשים פעם אחת, והשלבים נפתחים לפי הסדר.</p>
+    <span class="stageState" id="bundlePlanState">שני השלבים מראש — ללא דילוג</span>
+    <button class="primary planBtn" id="bundlePlanButton" type="button" onclick="startPayment('bundle')">רכישת שני השלבים – 79 ₪</button>
   </article>
 </div>
 <div class="planBoundary"><b>גבולות השירות:</b> DriveCheck מסביר את המידע שנמסר ואת משמעות הממצאים. השירות אינו קובע אם לקנות את הרכב, אינו מעריך מחירי תיקון או ירידת ערך ואינו מדרג את עבודת מכון הבדיקה.</div>
@@ -1005,10 +935,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="managerPlanButtons">
       <button type="button" onclick="previewPlanAsManager('premium')">בדיקה לפני המכון</button>
       <button type="button" onclick="previewPlanAsManager('report')">פענוח אחרי המכון</button>
-      <button type="button" onclick="previewPlanAsManager('consultation')">התייעצות</button>
       <button type="button" onclick="previewPlanAsManager('bundle')">חבילה מלאה</button>
       <button type="button" onclick="previewPlanAsManager('all')">הצג הכול</button>
-      <button type="button" onclick="openCustomerReplyPanel()">טופס מענה ללקוח</button>
     </div>
     <div class="managerPlanStatus" id="managerPlanStatus">מוצגת כרגע החבילה המלאה.</div>
   </div>
@@ -1142,48 +1070,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 <button class="primary full" id="finalPdfBtn" onclick="shareReportPdf('finalPdfBtn')" style="display:none">שיתוף סיכום מלא כ־PDF</button>
 <button class="secondary full returnBtn" type="button" onclick="returnToVehicle()">חזרה לנתוני הרכב</button>
 </section>
-<section class="clarificationBox consultationFeature" id="clarificationBox" aria-labelledby="clarificationTitle">
-  <div class="caseLabel">שלב 3 מתוך 3 · התייעצות אישית</div>
-  <h3 id="clarificationTitle" class="stageTitle"><span>התייעצות אישית עם בוחן רכב</span><span class="stagePriceTag">49 ₪</span></h3>
-  <p class="sub">אפשר להעביר את הדוח לבוחן רכב מוסמך לקבלת הסבר אישי על הממצאים ועל הבירורים שכדאי לבצע מול המכון, המוסך או השמאי.</p>
-  <div class="clarificationChoices">
-    <article class="clarificationChoice paid">
-      <span class="clarificationPrice">כלול בחבילה המלאה</span>
-      <h4>מענה אישי על דוח אחד ורכב אחד</h4>
-      <p>ההתייעצות מפרשת את הממצאים ומכוונת לבדיקות המשך. היא אינה כוללת החלטת קנייה, הערכת מחיר תיקון, שמאות או קביעה לגבי מקצועיות המכון.</p>
-      <button class="primary" type="button" onclick="selectClarification()">בקשת התייעצות אישית</button>
-    </article>
-  </div>
-  <div class="clarificationForm" id="clarificationForm">
-    <div class="field"><label for="clarificationQuestion"><b id="clarificationQuestionLabel">מה חשוב לך שאבדוק בדוח?</b></label><textarea id="clarificationQuestion" maxlength="1500" oninput="updateClarificationCounter()" placeholder="אפשר לכתוב בקצרה מה תרצה לברר ולצרף את דוח הבדיקה למייל"></textarea><div class="clarificationCounter" id="clarificationCounter"><span>תיאור קצר של הבירור</span><span id="clarificationCharacterCount">0 מתוך 1500</span></div></div>
-    <p class="formNote" id="clarificationFormNote">לאחר הלחיצה תיפתח אפליקציית המייל. יש לצרף את דוח הבדיקה המלא. שלב ההתייעצות נפתח רק לאחר השלמת הפענוח ואישור התשלום, או כחלק מהחבילה המלאה.</p>
-    <div class="info"><b>זמן המענה:</b> תשובות יינתנו בשעות העבודה המקובלות.</div>
-    <button class="primary full" type="button" onclick="sendClarificationEmail()">פתיחת בקשת התייעצות במייל</button>
-  </div>
-  <section class="customerReplyAdmin" id="customerReplyAdmin">
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-      <img src="assets/drivecheck-icon.svg" alt="DriveCheck" width="120" height="120" style="width:86px;height:auto;object-fit:contain">
-      <div><h2>מענה ללקוח</h2><p class="sub" style="margin:0">אזור מנהל: הזן את פרטי הפנייה ואת ההסבר שלך, הפק תשובה ממותגת ופתח מייל מוכן לשליחה.</p></div>
-    </div>
-    <table class="replyTable" aria-label="פרטי המענה ללקוח"><tbody>
-      <tr><th><label for="replyCustomerEmail">מייל הלקוח</label></th><td><input id="replyCustomerEmail" type="email" autocomplete="email" placeholder="customer@example.com"></td></tr>
-      <tr><th><label for="replyCustomerName">שם הלקוח</label></th><td><input id="replyCustomerName" autocomplete="name" placeholder="שם הלקוח או הלקוחה"></td></tr>
-      <tr><th><label for="replyVehiclePlate">מספר הרכב</label></th><td><input id="replyVehiclePlate" inputmode="numeric" maxlength="8" placeholder="מספר הרכב"></td></tr>
-      <tr><th><label for="replyCustomerQuestion">שאלת הלקוח</label></th><td><textarea id="replyCustomerQuestion" placeholder="הדבק כאן את השאלה שהתקבלה"></textarea></td></tr>
-      <tr><th><label for="replyProfessionalAnswer">ההסבר שלך</label></th><td><textarea class="replyAnswer" id="replyProfessionalAnswer" placeholder="כתוב כאן את ההסבר המקצועי שיישלח ללקוח"></textarea></td></tr>
-    </tbody></table>
-    <div class="replySafetyNote"><b>הבהרה משפטית שתצורף אוטומטית:</b> המענה מבוסס על דוח הבדיקה והמידע שנמסר בלבד. הוא אינו בדיקה פיזית, שמאות, הערכת עלויות או המלצה לקנות או לא לקנות את הרכב, ואינו קובע שמכון הבדיקה טעה או פעל שלא כשורה.</div>
-    <div class="replyActions">
-      <button class="secondary" type="button" onclick="saveCustomerReplyDraft()">שמור טיוטה</button>
-      <button class="secondary" type="button" onclick="downloadCustomerReplyPdf()">הורד תשובה עם לוגו כ־PDF</button>
-      <button class="primary" type="button" onclick="openPreparedCustomerEmail()">פתח מייל מוכן לשליחה</button>
-      <button class="secondary" type="button" onclick="clearCustomerReplyForm()">נקה טופס</button>
-    </div>
-    <div class="devMsg" id="customerReplyMessage" role="status" aria-live="polite"></div>
-    <div class="replyDrafts"><h3 style="margin:0 0 5px">טיוטות שנשמרו במכשיר זה</h3><div id="customerReplyDrafts"></div></div>
-  </section>
-</section>
-<div class="clarificationAdminPending" id="clarificationAdminPending"><b>הגדרת מנהל:</b> אזור הפניות מוכן, והוא יוצג ללקוחות לאחר הכנסת כתובת המייל העסקית.</div>
+
 </main>
 <section class="feedbackBox" id="feedbackBox">
 <h3>איך הייתה הבדיקה?</h3>
@@ -1216,7 +1103,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
       <p><b>טל״ח:</b> בפענוח אוטומטי עלולות להתרחש טעויות זיהוי, תמלול, שיוך או פרשנות. במקרה של אי־התאמה, דוח המקור גובר. אין להסתמך על ממצא שאינו מופיע בדוח המקורי, ויש לאמת כל ממצא מהותי מול הדוח ובעל מקצוע מתאים. הבהרה זו אינה גורעת מזכויות המשתמש לפי דין.</p>
       <p>בהעלאת דוח המשתמש מצהיר שהבדיקה הוזמנה על שמו או שיש לו הרשאה מתאימה מבעל הבדיקה לעשות שימוש בקובץ לצורך השירות. DriveCheck אינו טוען לבעלות בדוח המכון ואינו מפרסם או מצרף את טופס המקור לפלט. המשתמש מתבקש להעלות רק את אזור סיכום הבוחן, ללא לוגו ופרטים אישיים שאינם דרושים.</p>
       <p>DriveCheck אינו קשור למכון הבדיקה ואינו מדבר בשמו. ההסבר נגזר מן הטקסט שזוהה בדוח וממאגר הסיווג המקצועי של המערכת. הסיווג אינו ביקורת, דירוג או קביעה לגבי מקצועיות המכון, דיוק עבודתו או התנהלותו. ניסוח שמסווג כ„הסתייגות כללית” או „מגבלת בדיקה” מתאר את סוג המשפט בלבד ואינו מייחס למכון כוונה פסולה.</p>
-      <p>השירות בנוי משלושה שלבים עוקבים: בדיקה עצמית לפני המכון, פענוח דוח המכון והבדיקה הממוחשבת, ולאחריו התייעצות אישית. אפשר לשלם על כל שלב כאשר מגיעים אליו או לרכוש מראש חבילה מלאה לרכב אחד; בכל מקרה אי אפשר לדלג על שלב. ההתייעצות האישית מבוססת על הדוח והמידע שהמשתמש מסר בלבד ואינה בדיקה פיזית, שמאות, הערכת עלויות, המלצה לקנות או לא לקנות או קביעה לגבי מכון הבדיקה.</p>
+      <p>השירות בנוי משני שלבים עוקבים: בדיקה עצמית לפני המכון, ולאחריה פענוח דוח המכון והבדיקה הממוחשבת. אפשר לשלם על כל שלב כאשר מגיעים אליו או לרכוש מראש את שני השלבים לרכב אחד; בכל מקרה אי אפשר לדלג על שלב. הפענוח מבוסס על הדוח והמידע שהמשתמש מסר בלבד ואינו בדיקה פיזית, שמאות, הערכת עלויות, המלצה לקנות או לא לקנות או קביעה לגבי מכון הבדיקה.</p>
       <p>התשלום מתבצע בדף המאובטח של Cardcom. הרכישה משויכת למספר הרכב שהוזן, והגישה לשירות שנרכש נפתחת לאחר אישור התשלום למשך 48 שעות.</p>
       <p>כל הזכויות באתר, בתוכן, במבנה הבדיקה, ברשימות הבדיקה, בעיצוב ובסימני DriveCheck שמורות ל־DriveCheck. אין להעתיק, להפיץ או לעשות בהם שימוש מסחרי ללא אישור מראש ובכתב.</p>
     </div>
@@ -1229,7 +1116,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     <div id="cancelText" class="legalPage" style="display:none">
       <h2>ביטול עסקה והחזרים</h2>
       <p>לבקשת ביטול או לבירור עסקה יש לפנות ל־support@drivecheck.co.il ולציין שם, מספר הרכב ותאריך הרכישה. הבקשה תטופל בהתאם להוראות הדין, לסוג השירות ולשאלה אם השירות הדיגיטלי כבר החל או סופק. החזר שאושר יבוצע לאמצעי התשלום באמצעות Cardcom.</p>
-      <p>המחירים לרכב אחד ולמקרה בדיקה אחד הם: שלב 1 — בדיקה עצמית לפני המכון 49 ₪; שלב 2 — פענוח אחרי המכון 39 ₪, לאחר השלמת שלב 1; שלב 3 — התייעצות אישית 49 ₪, לאחר השלמת שלב 2; או חבילה מלאה ב־120 ₪ במקום 137 ₪ ברכישה נפרדת, כשהשלבים נפתחים לפי הסדר. מפעיל השירות: DriveCheck. כתובת קשר: support@drivecheck.co.il.</p>
+      <p>המחירים לרכב אחד ולמקרה בדיקה אחד הם: שלב 1 — בדיקה עצמית לפני המכון 49 ₪; שלב 2 — פענוח אחרי המכון 39 ₪, לאחר השלמת שלב 1; או שני השלבים יחד ב־79 ₪ במקום 88 ₪ ברכישה נפרדת, כשהשלבים נפתחים לפי הסדר. מפעיל השירות: DriveCheck. כתובת קשר: support@drivecheck.co.il.</p>
     </div>
   </div>
 </div>
@@ -1442,262 +1329,6 @@ document.querySelectorAll('.guidedChecks').forEach(renderGuided);
 
 
 
-// כתובת המייל העסקית הפעילה לפניות לקוחות.
-const BUYTEST_CONTACT_EMAIL='support@drivecheck.co.il' /* TODO לפני עלייה לאוויר: להצביע לתיבה פעילה */;
-let clarificationFindingOptions=[];
-function setClarificationFindingOptions(items){
-  const select=document.getElementById('clarificationFinding');
-  if(!select) return;
-  const unique=[];
-  const seen=new Set();
-  (items||[]).forEach(item=>{
-    if(!item) return;
-    const detail=String(item.sourceText||item.meaning||'').replace(/\s+/g,' ').trim();
-    const shortDetail=detail.length>90?detail.slice(0,87)+'…':detail;
-    const label=[item.category,shortDetail].filter(Boolean).join(' — ');
-    const key=label.toLowerCase();
-    if(!label||seen.has(key)) return;
-    seen.add(key);
-    unique.push(label);
-  });
-  clarificationFindingOptions=unique;
-  const previous=select.value;
-  select.innerHTML='';
-  const placeholder=document.createElement('option');
-  placeholder.value='';
-  placeholder.textContent=unique.length?'בחר ממצא מתוך הסיכום':'לא נמצאו ממצאים לבחירה';
-  select.appendChild(placeholder);
-  unique.forEach(label=>{
-    const option=document.createElement('option');
-    option.value=label;
-    option.textContent=label.length>110?label.slice(0,107)+'…':label;
-    select.appendChild(option);
-  });
-  if(unique.includes(previous)) select.value=previous;
-}
-function updateClarificationCounter(){
-  const question=document.getElementById('clarificationQuestion');
-  const count=document.getElementById('clarificationCharacterCount');
-  const counter=document.getElementById('clarificationCounter');
-  if(!question||!count||!counter) return;
-  const limit=question.maxLength>0?question.maxLength:1500;
-  count.textContent=`${question.value.length} מתוך ${limit}`;
-  counter.classList.toggle('limit',question.value.length>=limit);
-}
-function showClarificationOptions(){
-  const box=document.getElementById('clarificationBox');
-  const pending=document.getElementById('clarificationAdminPending');
-  const hasEmail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(BUYTEST_CONTACT_EMAIL);
-  if(box) box.classList.toggle('show',hasEmail);
-  if(pending) pending.style.display=!hasEmail&&document.body.classList.contains('manager-mode')?'block':'none';
-}
-function selectClarification(){
-  const form=document.getElementById('clarificationForm');
-  const question=document.getElementById('clarificationQuestion');
-  updateClarificationCounter();
-  form.classList.add('show');
-  form.scrollIntoView({behavior:'smooth',block:'nearest'});
-  setTimeout(()=>question.focus({preventScroll:true}),350);
-}
-function sendClarificationEmail(){
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(BUYTEST_CONTACT_EMAIL)){
-    alert('כתובת המייל העסקית עדיין לא הוגדרה.');
-    return;
-  }
-  const question=document.getElementById('clarificationQuestion').value.trim();
-  if(question.length<5){alert('יש לכתוב את השאלה לפני פתיחת הודעת המייל.');return;}
-  const vehiclePlate=plate()||'לא הוזן';
-  const owner=document.getElementById('inspectionOwnerName')?.value.trim()||'לא הוזן';
-  const subject=`בקשת התייעצות אישית · רכב ${vehiclePlate}`;
-  const body=[
-    'סוג הפנייה: התייעצות אישית עם בוחן רכב · 49 ₪ (או כחלק מהחבילה המלאה)',
-    `מספר רכב: ${vehiclePlate}`,
-    `שם מזמין הבדיקה: ${owner}`,
-    '',
-    'יש לצרף את דוח הבדיקה המלא כדי לאפשר מענה מקצועי ומדויק ככל האפשר.',
-    '',
-    'מה חשוב לבדוק בדוח:',
-    question,
-    '',
-    'מומלץ לצרף להודעה את קובץ ה־PDF של DriveCheck.'
-  ].filter(Boolean).join('\n');
-  location.href=`mailto:${BUYTEST_CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-
-function openCustomerReplyPanel(){
-  if(!document.body.classList.contains('manager-mode')) return;
-  previewPlanAsManager('consultation');
-  showClarificationOptions();
-  const panel=document.getElementById('customerReplyAdmin');
-  if(panel){panel.style.display='block';panel.scrollIntoView({behavior:'smooth',block:'start'});}
-}
-
-const CUSTOMER_REPLY_STORAGE_KEY='buytestCustomerReplyDraftsV1';
-const CUSTOMER_REPLY_LEGAL='המענה מבוסס על דוח הבדיקה והמידע שנמסר בלבד. הוא אינו בדיקה פיזית, שמאות, הערכת עלויות או המלצה לקנות או לא לקנות את הרכב, ואינו קובע שמכון הבדיקה טעה או פעל שלא כשורה.';
-function customerReplyData(){
-  return {
-    email:document.getElementById('replyCustomerEmail')?.value.trim()||'',
-    name:document.getElementById('replyCustomerName')?.value.trim()||'',
-    vehiclePlate:document.getElementById('replyVehiclePlate')?.value.replace(/\D/g,'')||'',
-    question:document.getElementById('replyCustomerQuestion')?.value.trim()||'',
-    answer:document.getElementById('replyProfessionalAnswer')?.value.trim()||''
-  };
-}
-function customerReplyMessage(text,isError=false){
-  const box=document.getElementById('customerReplyMessage');
-  if(!box) return;
-  box.textContent=text;
-  box.classList.add('show');
-  box.style.background=isError?'#fff0f0':'#fff4e0';
-  box.style.color=isError?'#8f2525':'#15202b';
-}
-function customerReplyDrafts(){
-  try{return JSON.parse(localStorage.getItem(CUSTOMER_REPLY_STORAGE_KEY)||'[]')}catch(_){return []}
-}
-function writeCustomerReplyDrafts(items){
-  localStorage.setItem(CUSTOMER_REPLY_STORAGE_KEY,JSON.stringify(items.slice(0,50)));
-}
-function saveCustomerReplyDraft(silent=false){
-  const data=customerReplyData();
-  if(!data.email&&!data.question&&!data.answer){if(!silent)customerReplyMessage('יש להזין לפחות פרט אחד לפני שמירת טיוטה.',true);return null;}
-  const items=customerReplyDrafts();
-  const activeId=document.getElementById('customerReplyAdmin')?.dataset.editingId||'';
-  const record={...data,id:activeId||String(Date.now()),updatedAt:new Date().toISOString()};
-  const existing=items.findIndex(item=>item.id===record.id);
-  if(existing>=0) items.splice(existing,1);
-  items.unshift(record);
-  writeCustomerReplyDrafts(items);
-  const panel=document.getElementById('customerReplyAdmin');
-  if(panel) panel.dataset.editingId=record.id;
-  renderCustomerReplyDrafts();
-  if(!silent) customerReplyMessage('הטיוטה נשמרה במכשיר זה.');
-  return record;
-}
-function renderCustomerReplyDrafts(){
-  const list=document.getElementById('customerReplyDrafts');
-  if(!list) return;
-  const items=customerReplyDrafts();
-  if(!items.length){list.innerHTML='<p class="sub">עדיין לא נשמרו טיוטות.</p>';return;}
-  list.innerHTML=items.map(item=>{
-    const date=item.updatedAt?new Date(item.updatedAt).toLocaleString('he-IL'):'';
-    const title=[item.name||item.email||'לקוח',item.vehiclePlate?'רכב '+item.vehiclePlate:''].filter(Boolean).join(' · ');
-    return `<article class="replyDraftItem"><b>${escapeHtml(title)}</b><small>${escapeHtml(date)}${item.email?' · '+escapeHtml(item.email):''}</small><div class="miniActions"><button class="secondary" type="button" onclick="editCustomerReplyDraft('${item.id}')">פתח לעריכה</button><button class="secondary" type="button" onclick="deleteCustomerReplyDraft('${item.id}')">מחק</button></div></article>`;
-  }).join('');
-}
-function editCustomerReplyDraft(id){
-  const item=customerReplyDrafts().find(record=>record.id===id);
-  if(!item) return;
-  document.getElementById('replyCustomerEmail').value=item.email||'';
-  document.getElementById('replyCustomerName').value=item.name||'';
-  document.getElementById('replyVehiclePlate').value=item.vehiclePlate||'';
-  document.getElementById('replyCustomerQuestion').value=item.question||'';
-  document.getElementById('replyProfessionalAnswer').value=item.answer||'';
-  document.getElementById('customerReplyAdmin').dataset.editingId=item.id;
-  document.getElementById('customerReplyAdmin').scrollIntoView({behavior:'smooth',block:'start'});
-}
-function deleteCustomerReplyDraft(id){
-  if(!confirm('למחוק את טיוטת המענה הזו?')) return;
-  writeCustomerReplyDrafts(customerReplyDrafts().filter(item=>item.id!==id));
-  if(document.getElementById('customerReplyAdmin')?.dataset.editingId===id) clearCustomerReplyForm();
-  renderCustomerReplyDrafts();
-}
-function clearCustomerReplyForm(){
-  ['replyCustomerEmail','replyCustomerName','replyVehiclePlate','replyCustomerQuestion','replyProfessionalAnswer'].forEach(id=>{const field=document.getElementById(id);if(field)field.value=''});
-  const panel=document.getElementById('customerReplyAdmin');
-  if(panel) delete panel.dataset.editingId;
-  customerReplyMessage('הטופס נוקה.');
-}
-function validCustomerReply(requireEmail=true){
-  const data=customerReplyData();
-  if(requireEmail&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){customerReplyMessage('יש להזין כתובת מייל תקינה של הלקוח.',true);return null;}
-  if(data.answer.length<5){customerReplyMessage('יש לכתוב את ההסבר שלך לפני ההפקה או השליחה.',true);return null;}
-  return data;
-}
-function openPreparedCustomerEmail(){
-  const data=validCustomerReply(true);
-  if(!data) return;
-  saveCustomerReplyDraft(true);
-  const subject=`מענה DriveCheck${data.vehiclePlate?' · רכב '+data.vehiclePlate:''}`;
-  const greeting=data.name?`שלום ${data.name},`:'שלום,';
-  const body=[
-    greeting,
-    '',
-    data.vehiclePlate?`בהמשך לפנייתך לגבי רכב מספר ${data.vehiclePlate}:`:'בהמשך לפנייתך:',
-    data.question?'השאלה שנשלחה:\n'+data.question:'',
-    '',
-    'המענה המקצועי:',
-    data.answer,
-    '',
-    CUSTOMER_REPLY_LEGAL,
-    'המענה ניתן בשעות העבודה המקובלות.',
-    '',
-    'בברכה,',
-    'צוות DriveCheck',
-    BUYTEST_CONTACT_EMAIL
-  ].filter(line=>line!==null&&line!==undefined).join('\n');
-  customerReplyMessage('המייל מוכן. לפני השליחה יש לוודא שחשבון השולח הוא '+BUYTEST_CONTACT_EMAIL+'.');
-  location.href=`mailto:${data.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-async function downloadCustomerReplyPdf(){
-  const data=validCustomerReply(false);
-  if(!data) return;
-  saveCustomerReplyDraft(true);
-  try{
-    const W=1240,H=1754,margin=90,pages=[];
-    let canvas,ctx,y;
-    function newPage(){
-      canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;
-      ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-      ctx.direction='rtl';ctx.textAlign='right';ctx.textBaseline='top';y=75;
-    }
-    function finishPage(){const url=canvas.toDataURL('image/jpeg',0.92);pages.push({bytes:btDataUrlBytes(url),width:W,height:H});}
-    function ensure(height){if(y+height>H-105){finishPage();newPage();drawPageHeader(false)}}
-    function textBlock(text,size=32,bold=false,gap=18,color='#182126'){
-      ctx.font=`${bold?'700':'400'} ${size}px Arial, sans-serif`;ctx.fillStyle=color;
-      const paragraphs=String(text||'').split(/\n+/);
-      for(const paragraph of paragraphs){
-        const lines=btWrapRtl(ctx,paragraph,W-margin*2);
-        ensure(lines.length*(size*1.55)+gap);
-        lines.forEach(line=>{ctx.fillText(line,W-margin,y);y+=size*1.55});
-        y+=gap;
-      }
-    }
-    function drawPageHeader(first){
-      ctx.fillStyle='#e08600';ctx.fillRect(0,0,W,18);
-      if(first) return;
-      ctx.font='700 26px Arial, sans-serif';ctx.fillStyle='#9a5a00';ctx.fillText('DriveCheck · מענה ללקוח',W-margin,y);y+=55;
-    }
-    newPage();drawPageHeader(true);
-    const logo=await btLoadImage('assets/drivecheck-logo-print.png');
-    if(logo){
-      const maxW=300,maxH=150,scale=Math.min(maxW/logo.width,maxH/logo.height);
-      const iw=Math.round(logo.width*scale),ih=Math.round(logo.height*scale);
-      ctx.drawImage(logo,W-margin-iw,y,iw,ih);y+=ih+25;
-    }
-    textBlock('מענה מקצועי ללקוח',42,true,8,'#15202b');
-    textBlock(new Date().toLocaleDateString('he-IL'),24,false,24,'#60717a');
-    if(data.name) textBlock('לכבוד: '+data.name,30,true,8);
-    if(data.vehiclePlate) textBlock('מספר רכב: '+data.vehiclePlate,28,true,22);
-    if(data.question){textBlock('השאלה שהתקבלה',29,true,8,'#9a5a00');textBlock(data.question,29,false,24);}
-    textBlock('המענה',31,true,8,'#9a5a00');
-    textBlock(data.answer,31,false,28);
-    ensure(180);
-    ctx.fillStyle='#fff7e8';ctx.fillRect(margin,y-4,W-margin*2,10);y+=18;
-    textBlock('הבהרה משפטית',27,true,7,'#694d13');
-    textBlock(CUSTOMER_REPLY_LEGAL,24,false,18,'#694d13');
-    textBlock('המענה ניתן בשעות העבודה המקובלות.',24,false,24,'#694d13');
-    textBlock('DriveCheck · '+BUYTEST_CONTACT_EMAIL,23,true,0,'#9a5a00');
-    finishPage();
-    const blob=btPdfFromJpegs(pages);
-    const fileName=`DriveCheck-response-${data.vehiclePlate||'customer'}.pdf`;
-    downloadPdfFile(new File([blob],fileName,{type:'application/pdf'}));
-    customerReplyMessage('התשובה עם הלוגו וההבהרה המשפטית הורדה כ־PDF. יש לצרף אותה למייל המוכן.');
-  }catch(error){
-    console.error('DriveCheck customer reply PDF error:',error);
-    customerReplyMessage('לא הצלחנו להפיק את קובץ התשובה. נסה שוב.',true);
-  }
-}
-
 let feedbackRating=0;
 function showFeedback(){document.getElementById('feedbackBox').style.display='block'}
 function setRating(n){
@@ -1721,10 +1352,9 @@ function unlockFreeSections(){document.querySelectorAll('.freeAfterLookup').forE
 const buytestPlans={
   premium:{name:'בדיקה עצמית לפני המכון',price:49,scope:'שאלות למוכר, בדיקות חיצוניות ופנימיות, נסיעה קצרה, תמונות וסיכום PDF'},
   report:{name:'פענוח אחרי המכון',price:39,scope:'פענוח סיכום הבוחן והבדיקה הממוחשבת, אם צורפה, וסיכום PDF'},
-  consultation:{name:'התייעצות אישית',price:49,scope:'מעבר אישי על דוח אחד ורכב אחד ומתן הסבר מקצועי'},
-  bundle:{name:'חבילת DriveCheck המלאה',price:120,scope:'בדיקה עצמית לפני המכון, פענוח אחרי המכון והתייעצות אישית לרכב אחד'}
+  bundle:{name:'חבילת DriveCheck המלאה',price:79,scope:'בדיקה עצמית לפני המכון ופענוח אחרי המכון לרכב אחד'}
 };
-const buytestPlanClasses=['plan-premium','plan-report','plan-consultation','plan-bundle'];
+const buytestPlanClasses=['plan-premium','plan-report','plan-bundle'];
 let buyTestStageProgress={preInspectionCompleted:false,reportCompleted:false};
 function normalizedStageProgress(value){
   const progress=value&&typeof value==='object'?value:{};
@@ -1745,28 +1375,22 @@ function setRoadmapCard(key,state,statusText,buttonText,disabled){
 function updateBuyTestRoadmap(){
   const plan=activeBuyTestPlan();
   const progress=buyTestStageProgress;
-  const hasPremium=['premium','report','consultation','bundle'].includes(plan);
-  const hasReport=['report','consultation'].includes(plan)||(plan==='bundle'&&progress.preInspectionCompleted);
-  const hasConsultation=plan==='consultation'||(plan==='bundle'&&progress.reportCompleted);
+  const hasPremium=['premium','report','bundle'].includes(plan);
+  const hasReport=plan==='report'||(plan==='bundle'&&progress.preInspectionCompleted);
   document.body.classList.toggle('stage-report-open',plan==='bundle'&&progress.preInspectionCompleted);
-  document.body.classList.toggle('stage-consultation-open',plan==='bundle'&&progress.reportCompleted);
 
   if(progress.preInspectionCompleted) setRoadmapCard('premium','completed','✓ שלב 1 הושלם','שלב 1 הושלם',true);
   else if(hasPremium) setRoadmapCard('premium','current','שלב 1 פתוח — יש להשלים אותו כדי להתקדם','המשך לשלב 1',true);
   else setRoadmapCard('premium','current','השלב הראשון — מתחילים כאן','פתיחת שלב 1 – 49 ₪',false);
 
-  if(progress.reportCompleted) setRoadmapCard('report','completed','✓ שלב 2 הושלם','שלב 2 הושלם',true);
+  if(progress.reportCompleted) setRoadmapCard('report','completed','✓ שלב 2 הושלם — המסלול הושלם','שלב 2 הושלם',true);
   else if(hasReport) setRoadmapCard('report','current','שלב 2 פתוח כעת','המשך לשלב 2',true);
   else if(progress.preInspectionCompleted) setRoadmapCard('report','current','שלב 1 הושלם — אפשר לפתוח את שלב 2','פתיחת שלב 2 – 39 ₪',false);
   else setRoadmapCard('report','locked','נפתח לאחר השלמת שלב 1','שלב 2 נעול עד להשלמת שלב 1',true);
 
-  if(hasConsultation) setRoadmapCard('consultation','current','שלב 3 פתוח כעת','המשך לשלב 3',true);
-  else if(progress.reportCompleted) setRoadmapCard('consultation','current','שלב 2 הושלם — אפשר לפתוח את שלב 3','פתיחת שלב 3 – 49 ₪',false);
-  else setRoadmapCard('consultation','locked','נפתח לאחר השלמת שלב 2','שלב 3 נעול עד להשלמת שלב 2',true);
-
   if(plan==='bundle') setRoadmapCard('bundle','completed','✓ החבילה המלאה נרכשה — מתקדמים לפי הסדר','החבילה המלאה נרכשה',true);
   else if(plan) setRoadmapCard('bundle','locked','כבר התחלת מסלול בתשלום לפי שלבים','החבילה המלאה זמינה רק בתחילת המסלול',true);
-  else setRoadmapCard('bundle','current','כל המסלול מראש — ללא דילוג על שלבים','רכישת כל המסלול – 120 ₪',false);
+  else setRoadmapCard('bundle','current','שני השלבים מראש — ללא דילוג','רכישת שני השלבים – 79 ₪',false);
 }
 function setBuyTestStageProgress(value){
   buyTestStageProgress=normalizedStageProgress(value);
@@ -1775,13 +1399,12 @@ function setBuyTestStageProgress(value){
 function applyPlanAccess(planKey,{scroll=false,progress=buyTestStageProgress}={}){
   const valid=Object.prototype.hasOwnProperty.call(buytestPlans,planKey);
   if(!valid) return false;
-  document.body.classList.remove(...buytestPlanClasses,'manager-all','stage-report-open','stage-consultation-open');
+  document.body.classList.remove(...buytestPlanClasses,'manager-all','stage-report-open');
   document.body.classList.add('plan-'+planKey);
   setBuyTestStageProgress(progress);
   document.querySelectorAll('.paidOnly').forEach(section=>section.style.removeProperty('display'));
-  showClarificationOptions();
   if(scroll){
-    const target=planKey==='bundle'?(buyTestStageProgress.reportCompleted?document.getElementById('clarificationBox'):buyTestStageProgress.preInspectionCompleted?document.getElementById('afterInspectionSection'):document.getElementById('selfCheckIntro')):planKey==='premium'?document.getElementById('selfCheckIntro'):planKey==='report'?document.getElementById('afterInspectionSection'):document.getElementById('clarificationBox');
+    const target=planKey==='bundle'?(buyTestStageProgress.preInspectionCompleted?document.getElementById('afterInspectionSection'):document.getElementById('selfCheckIntro')):planKey==='report'?document.getElementById('afterInspectionSection'):document.getElementById('selfCheckIntro');
     target?.scrollIntoView({behavior:'smooth',block:'start'});
   }
   return true;
@@ -1799,7 +1422,7 @@ function storedBuyTestPayment(){
 function saveBuyTestPayment(value){localStorage.setItem(BUYTEST_PAYMENT_STORAGE_KEY,JSON.stringify(value))}
 function clearBuyTestPayment(){localStorage.removeItem(BUYTEST_PAYMENT_STORAGE_KEY)}
 function lockPurchasedPlan(){
-  document.body.classList.remove(...buytestPlanClasses,'manager-all','stage-report-open','stage-consultation-open');
+  document.body.classList.remove(...buytestPlanClasses,'manager-all','stage-report-open');
   setBuyTestStageProgress({});
   document.querySelectorAll('.paidOnly').forEach(section=>section.style.display='none');
 }
@@ -1962,7 +1585,6 @@ function previewPlanAsManager(planKey='all'){
   if(planKey==='all'){
     document.body.classList.remove(...buytestPlanClasses);
     document.body.classList.add('manager-all');
-    showClarificationOptions();
     if(status) status.textContent='מוצגים כרגע כל חלקי המערכת.';
     return;
   }
@@ -1975,11 +1597,6 @@ async function startPayment(planKey='bundle'){
   if(selectedKey==='report'&&!buyTestStageProgress.preInspectionCompleted){
     showBuyTestAccessNotice('שלב 2 נפתח רק לאחר השלמת שלב 1 והפקת סיכום הבדיקה העצמית.',true);
     document.getElementById('premiumPlanCard')?.scrollIntoView({behavior:'smooth',block:'center'});
-    return;
-  }
-  if(selectedKey==='consultation'&&!buyTestStageProgress.reportCompleted){
-    showBuyTestAccessNotice('שלב 3 נפתח רק לאחר השלמת שלב 2 ופענוח דוח המכון.',true);
-    document.getElementById('reportPlanCard')?.scrollIntoView({behavior:'smooth',block:'center'});
     return;
   }
   if(selectedKey==='bundle'&&activeBuyTestPlan()){
@@ -2060,8 +1677,7 @@ async function completeBuyTestStage(stage){
     const progress=normalizedStageProgress(result.progress);
     saveBuyTestPayment({...saved,progress,accessToken:result.accessToken||saved.accessToken});
     setBuyTestStageProgress(progress);
-    showClarificationOptions();
-    const label=stage==='premium'?'שלב 1 הושלם. שלב 2 פתוח כעת.':'שלב 2 הושלם. שלב 3 פתוח כעת.';
+    const label=stage==='premium'?'שלב 1 הושלם. שלב 2 פתוח כעת.':'שלב 2 הושלם — המסלול הושלם.';
     showBuyTestAccessNotice('✓ '+label);
     return true;
   }catch(error){
@@ -2096,11 +1712,7 @@ async function openManagerPreview(){
   if(notice){notice.style.display='block';notice.scrollIntoView({behavior:'smooth',block:'start'});}
   const formulaPanel=document.getElementById('managerFormulaPanel');
   if(formulaPanel) formulaPanel.style.display='block';
-  const replyPanel=document.getElementById('customerReplyAdmin');
-  if(replyPanel) replyPanel.style.display='block';
   initFormulaAdmin();
-  renderCustomerReplyDrafts();
-  showClarificationOptions();
 }
 let vehiclePhotoData=[];
 let btPreparedPdfFile=null, btPdfPreparing=null;
@@ -5476,10 +5088,6 @@ async function analyseInspectionReport(){
   const box=document.getElementById('afterInterpretation');
   box.innerHTML=html;
   box.classList.add('show');
-  setClarificationFindingOptions([
-    ...summaryResult.findings.map(finalizeReportFinding).filter(Boolean),
-    ...computerResult.findings.map(finalizeReportFinding).filter(Boolean)
-  ]);
 
   const pre=collectPreInspection();
   preReportText=pre.text;
@@ -5488,9 +5096,8 @@ async function analyseInspectionReport(){
   prepareReportPdf('finalPdfBtn');
   const stageUpdated=await completeBuyTestStage('report');
   showFeedback();
-  showClarificationOptions();
   box.scrollIntoView({behavior:'smooth',block:'start'});
-  if(status){status.textContent=stageUpdated?'✓ הפענוח הושלם. שלב 3 פתוח כעת.':'✓ הפענוח הושלם. פתיחת שלב 3 תתעדכן לאחר חידוש החיבור.';status.classList.add('show');status.classList.remove('error');}
+  if(status){status.textContent=stageUpdated?'✓ הפענוח הושלם. המסלול הושלם.':'✓ הפענוח הושלם.';status.classList.add('show');status.classList.remove('error');}
   }catch(error){
     console.error('DriveCheck secure analysis error:',error);
     const messages={
@@ -6103,7 +5710,12 @@ document.addEventListener('keydown',event=>{
     }
     var wrap=document.createElement('span');
     wrap.className='dcOdo'; wrap.innerHTML=html;
-    node.textContent=''; node.appendChild(wrap);
+    // הגלגלת היא ויזואלית בלבד: היא מכילה 0-9 לכל ספרה, וקורא מסך היה
+    // מקריא את כל הרצף. מסתירים אותה ומשאירים את הערך האמיתי לטכנולוגיה מסייעת.
+    wrap.setAttribute('aria-hidden','true');
+    var sr=document.createElement('span');
+    sr.className='dcSr'; sr.textContent=raw;
+    node.textContent=''; node.appendChild(wrap); node.appendChild(sr);
     digits=$$('.reel',wrap);
     requestAnimationFrame(function(){
       digits.forEach(function(r,i){
@@ -6166,8 +5778,7 @@ document.addEventListener('keydown',event=>{
     return bar;
   }
   var STAGES=[
-    ['plan-bundle','חבילה מלאה · כל השלבים'],
-    ['plan-consultation','שלב 3 · התייעצות אישית'],
+    ['plan-bundle','שני השלבים · מסלול מלא'],
     ['plan-report','שלב 2 · פענוח הדוח'],
     ['plan-premium','שלב 1 · בדיקה לפני המכון']
   ];
@@ -6221,7 +5832,7 @@ document.addEventListener('keydown',event=>{
   /* ---------- [9] "העברת הילוך" בין שלבים ---------- */
   function watchStages(){
     if(RM || !('MutationObserver' in window)) return;
-    var targets=$$('#fullCheckOffer, #selfCheckIntro, #afterInspectionSection, #clarificationBox, .paidOnly, .card');
+    var targets=$$('#fullCheckOffer, #selfCheckIntro, #afterInspectionSection, .paidOnly, .card');
     var seen=new WeakMap();
     var mo=new MutationObserver(function(muts){
       muts.forEach(function(m){
