@@ -60,14 +60,27 @@ Create credentials → API key. כדאי להגביל אותו ל־Cloud Vision 
 ## 4. פונקציות
 
 ```bash
-export SUPABASE_ACCESS_TOKEN=sbp_...     # supabase.com/dashboard/account/tokens
-export GOOGLE_VISION_API_KEY=AIza...     # אופציונלי
-./supabase/deploy.sh                     # סודות + כל חמש הפונקציות
+./supabase/deploy.sh            # סודות, פריסה, ואז אימות
+./supabase/deploy.sh verify     # בדיקת מוכנות בלבד — לא משנה כלום
+./supabase/deploy.sh secrets    # סודות בלבד
+./supabase/deploy.sh deploy     # פריסה בלבד
 ```
+
+**אין להעביר סודות בשורת הפקודה.** ערך שנכתב כארגומנט נשמר בהיסטוריית ה־shell
+ונראה לכל תהליך דרך `ps`. הסקריפט קורא מ־`SUPABASE_ACCESS_TOKEN` ומ־
+`GOOGLE_VISION_API_KEY` אם הם מוגדרים בסביבה, ואחרת מבקש אותם בהקלדה סמויה
+(`read -rs`) — התו לא מוצג, הערך לא מודפס ולא נכנס להיסטוריה.
 
 הסקריפט מדפלייט את `vision-ocr`, `buytest-analyze` ו־`buytest-payment` עם
 אימות JWT, ואת `buytest-payment-webhook` ו־`buytest-cardcom-setup` בלעדיו —
 הראשון נקרא על ידי Cardcom והשני נפתח ישירות בדפדפן, ולשניהם אין JWT.
+
+### אימות לפני מיזוג
+
+`./supabase/deploy.sh verify` פונה לכל חמש הפונקציות. פונקציה שלא נפרסה מחזירה
+404; פונקציה שקיימת ודורשת JWT מחזירה 401, וזו התשובה התקינה. **אין למזג את
+ה־PR לפני שהפקודה הזו מסיימת ירוקה** — `index.html` כבר מצביע לפרויקט החדש,
+ומיזוג מוקדם ישאיר את האתר החי קורא לפונקציות שאינן קיימות.
 
 | פונקציה | תפקיד |
 |---|---|
@@ -129,3 +142,21 @@ select buytest_set_private_config('buytest_manager_pin_hash',
 | Google Cloud Vision | OCR של דוחות | שלך |
 | Cardcom | סליקה | שלך |
 | data.gov.il | נתוני רכב ממשרד התחבורה | ציבורי, ללא מפתח |
+
+## בדיקות
+
+```bash
+python3 tests/static_checks.py    # ללא תלויות
+python3 tests/browser_checks.py   # דורש: pip install playwright && playwright install chromium
+```
+
+רצות גם ב־GitHub Actions על כל push ו־PR (`.github/workflows/ci.yml`).
+כל בדיקה נכתבה מול באג שקרה בפרויקט הזה, ואומתה שהיא נכשלת כשהבאג מוחזר.
+
+## מה עוד לא נבדק
+
+`vision-ocr` נפרסה ואומתה כקיימת, אך **מסלול ה־OCR מקצה לקצה לא הורץ** — הוא
+דורש מפתח Google פעיל. אחרי הגדרת הסוד יש להעלות תמונת דוח אחת ולוודא שהטקסט
+מזוהה. באותה בדיקה כדאי לוודא שאין הפרות CSP בקונסולה: `pdf.js` ו־`tesseract.js`
+טוענים worker ונתוני שפה מ־`cdn.jsdelivr.net` ומ־`tessdata.projectnaptha.com`,
+שניהם מותרים ב־CSP, אך הנתיבים האלה לא ניתנים להרצה בסביבת הפיתוח הסגורה.

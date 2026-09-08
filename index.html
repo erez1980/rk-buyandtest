@@ -7,6 +7,11 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta content="#0c0f14" name="theme-color"/>
+<!-- Content-Security-Policy. GitHub Pages לא מאפשר כותרות HTTP, ולכן דרך meta.
+     frame-ancestors ו-report-uri אינם נתמכים ב-meta ולכן אינם כאן.
+     cdn.jsdelivr.net, blob: ו-tessdata נדרשים ל-pdf.js ול-tesseract.js:
+     הם טוענים worker ונתוני שפה בזמן ריצה. צמצום שלהם ישבור את ה-OCR. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; form-action 'self'; frame-src 'none'; img-src 'self' data: blob:; media-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' blob: https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; connect-src 'self' data: blob: https://*.supabase.co https://data.gov.il https://cdn.jsdelivr.net https://tessdata.projectnaptha.com">
 <meta name="description" content="DriveCheck — נתוני רכב והתאמת רישיון בחינם, בדיקה עצמית לפני מכון הבדיקה ופענוח דוח הבוחן אחריו, בשפה שאתה מבין.">
 
 <!-- ==========================================================================
@@ -4707,7 +4712,7 @@ function meaningCardHtml(item){
   const decision=customerFacingDecision(item);
   const heading=item.code?`<span class="dtcCode">${escapeHtml(item.displayCode||item.code)}</span> · ${escapeHtml(item.category)}`:escapeHtml(item.category);
   const decisionLabel=item.code||item.computerDescription?'מה צריך לבדוק:':'מה כדאי לברר:';
-  return `<div class="meaningCard ${item.tone||''}"><span class="meaningTag">${escapeHtml(item.tag||formulaClassificationLabels[item.classification]||'סיווג מקצועי')}</span><h4>${heading}</h4><p><b>מה זה אומר:</b> ${escapeHtml(meaning)}</p><p><b>${decisionLabel}</b> ${escapeHtml(decision)}</p>${context}${source}</div>`;
+  return `<div class="meaningCard ${escapeHtml(item.tone||'')}"><span class="meaningTag">${escapeHtml(item.tag||formulaClassificationLabels[item.classification]||'סיווג מקצועי')}</span><h4>${heading}</h4><p><b>מה זה אומר:</b> ${escapeHtml(meaning)}</p><p><b>${decisionLabel}</b> ${escapeHtml(decision)}</p>${context}${source}</div>`;
 }
 
 const compactSeverityRank={high:3,low:2,marginal:1,active:3,unresolved:2,historical:1};

@@ -71,6 +71,15 @@
 
 `prefers-reduced-motion: reduce` מכובד — כל האנימציות נעצרות ורצף ההתנעה מדולג.
 
+## בדיקות
+
+```bash
+python3 tests/static_checks.py    # סודות, מחירים, מפתחות, מידע אישי
+python3 tests/browser_checks.py   # שגיאות JS, CSP, ניגודיות, reduced-motion
+```
+
+רצות אוטומטית ב־GitHub Actions על כל push ו־PR.
+
 ## פיתוח מקומי
 
 ```bash

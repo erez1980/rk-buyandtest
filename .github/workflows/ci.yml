@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    name: Static checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # סריקת הסודות עוברת על כל הקבצים במעקב
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 tests/static_checks.py
+
+  browser:
+    name: Browser checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet playwright
+      - run: python3 -m playwright install --with-deps chromium
+      - run: python3 tests/browser_checks.py
+
+  shell:
+    name: Shell scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - run: shellcheck supabase/deploy.sh
+
+  edge-functions:
+    name: Edge function type check
+    runs-on: ubuntu-latest
+    # מייעץ ולא חוסם: לא ניתן היה להריץ deno בסביבה שבה נכתב ה-workflow,
+    # ולכן הוא לא אומת. אחרי ריצה ירוקה ראשונה אפשר להסיר את השורה הזו.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: deno check
+        run: |
+          # buytest-analyze נשאר מחוץ לבדיקה: הוא נכתב כקובץ יחיד ומוקטן
+          # ו-deno check עליו מייצר רעש שאינו מעיד על תקלה אמיתית.
+          for fn in vision-ocr buytest-payment buytest-payment-webhook buytest-cardcom-setup; do
+            echo "▸ $fn"
+            deno check "supabase/functions/$fn/index.ts"
+          done
