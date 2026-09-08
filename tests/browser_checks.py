@@ -110,6 +110,30 @@ def main():
                 else:
                     ok("contrast", "no WCAG AA failures with paid sections revealed")
 
+                # שלושת הדיאלוגים מסומנים aria-modal; המיקוד חייב להיכנס אליהם
+                # ולחזור לפותח בסגירה, אחרת משתמש מקלדת נשאר בדף שברקע.
+                page.evaluate("()=>document.querySelector('.legalLinks button').focus()")
+                opener = page.evaluate("()=>document.activeElement.textContent.trim()")
+                page.evaluate("()=>openLegal('terms')")
+                page.wait_for_timeout(250)
+                inside = page.evaluate("()=>document.getElementById('legalModal').contains(document.activeElement)")
+                page.keyboard.press("Escape")
+                page.wait_for_timeout(250)
+                restored = page.evaluate("()=>document.activeElement.textContent.trim()")
+                if not inside:
+                    fail("modal-focus", "המיקוד לא נכנס למודאל המשפטי")
+                elif restored != opener:
+                    fail("modal-focus", f"המיקוד לא חזר לפותח ({restored!r} != {opener!r})")
+                else:
+                    ok("modal-focus", "focus enters the dialog and returns to the opener")
+
+                # startPayment יוצא מוקדם כשאין מסלול קודם — אסור שיגנוב מיקוד
+                page.evaluate("()=>document.querySelector('.legalLinks button').focus()")
+                page.evaluate("()=>startPayment('report')")
+                page.wait_for_timeout(600)
+                if not page.evaluate("()=>document.getElementById('paymentOverlay').hidden"):
+                    page.evaluate("()=>closeBuyTestPayment()")
+
                 cfg = page.evaluate("()=>({ref:DRIVECHECK_SUPABASE_REF,ready:googleVisionReady()})")
                 if not cfg["ready"]:
                     fail("config", "googleVisionReady() is false — endpoint or key malformed")

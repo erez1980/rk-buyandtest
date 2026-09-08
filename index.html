@@ -1130,8 +1130,10 @@ main{padding:18px 14px 90px}
   <img id="licenseImageLarge" alt="דוגמה מוגדלת לרישיון רכב">
 </div>
 <footer>© 2026 DriveCheck · כל הזכויות שמורות · יודעים מה קונים</footer>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/tesseract.js@7.0.0/dist/tesseract.min.js" crossorigin="anonymous"></script>
+<!-- defer: שתיהן נדרשות רק ב-OCR של שלב 2, ונקראות מאחורי בדיקת window.pdfjsLib / window.Tesseract.
+     בלי defer הן חסמו את הפרסור של הסקריפט הראשי בכל טעינת דף. -->
+<script defer src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@7.0.0/dist/tesseract.min.js" crossorigin="anonymous"></script>
 <script>
 const VEHICLE_ID='56063a99-8a3e-4ff4-912e-5966c0279bad';
 const OWNERS_ID='bb2355dc-9ec7-4f06-9c3f-3344672171da';
@@ -5619,6 +5621,43 @@ document.addEventListener('keydown',event=>{
   if(!document.getElementById('paymentOverlay')?.hidden) closeBuyTestPayment();
 });
 
+/* ניהול מיקוד במודאלים.
+   שלושת הדיאלוגים מסומנים aria-modal="true", אבל המיקוד נשאר על הכפתור שמאחוריהם:
+   משתמש מקלדת או קורא מסך נשאר בדף שברקע ולא מגיע לתוכן שנפתח. Escape כבר עבד.
+   עוטפים את פונקציות הפתיחה והסגירה במקום לערוך אותן, כדי לא לגעת בלוגיקה. */
+(function(){
+  var opener=null;
+  function focusInto(el){
+    if(!el) return;
+    var target=el.querySelector('h2,h3,[autofocus]')||el;
+    if(!target.hasAttribute('tabindex')) target.setAttribute('tabindex','-1');
+    try{ target.focus({preventScroll:true}) }catch(_e){}
+  }
+  function wrap(openName,closeName,getDialog){
+    var open=window[openName], close=window[closeName];
+    if(typeof open!=='function'||typeof close!=='function') return;
+    window[openName]=function(){
+      opener=document.activeElement;
+      var r=open.apply(this,arguments);
+      setTimeout(function(){focusInto(getDialog())},0);
+      return r;
+    };
+    window[closeName]=function(){
+      var r=close.apply(this,arguments);
+      if(opener&&document.contains(opener)){ try{opener.focus({preventScroll:true})}catch(_e){} }
+      opener=null;
+      return r;
+    };
+  }
+  wrap('openLegal','closeLegal',function(){return document.querySelector('#legalModal .legalSheet')});
+  wrap('startPayment','closeBuyTestPayment',function(){
+    // startPayment יוצא מוקדם בכמה מסלולים בלי לפתוח כלום — אז לא גונבים מיקוד
+    var overlay=document.getElementById('paymentOverlay');
+    return overlay&&!overlay.hidden?overlay.querySelector('.paymentDialog'):null;
+  });
+  wrap('openLicenseImage','closeLicenseImage',function(){return document.getElementById('licenseImageModal')});
+})();
+
 </script>
 </div>
 
@@ -5628,7 +5667,7 @@ document.addEventListener('keydown',event=>{
     <p id="paymentPlanSummary"></p>
     <p class="paymentStatus" id="paymentStatus" role="status" aria-live="polite"></p>
     <div class="paymentUnavailable" id="paymentUnavailable" hidden>
-      <p>מערכת התשלום אינה זמינה כרגע. לא בוצע חיוב ואפשר לנסות שוב בעוד מספר דקות.</p>
+      <p>התשלום המקוון עדיין לא נפתח. <b>לא בוצע חיוב.</b> אפשר להמשיך להשתמש בשלב המקדים בחינם, ולחזור לכאן כשהתשלום ייפתח.</p>
       <div class="paymentActions"><button class="primary" type="button" onclick="closeBuyTestPayment()">הבנתי</button></div>
     </div>
     <form class="paymentForm" id="paymentForm" hidden onsubmit="event.preventDefault();submitBuyTestPayment()">
